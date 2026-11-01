@@ -9,12 +9,12 @@ if (!defined('ROOT')) {
 }
 
 $GLOBALS['CONFIG'] = require ROOT . '/inc/config.php';
-$secretsFile = ROOT . '/config/secrets.php';
+$secretsFile = getenv('VNL_SECRETS') ?: ROOT . '/config/secrets.php';   // env override is for tests only
 $GLOBALS['SECRETS'] = is_file($secretsFile) ? (require $secretsFile) : [];
 
 /* Writable storage. Hostinger: /data. Vercel (read-only filesystem): the temp dir. */
 if (!defined('STORAGE')) {
-    $storage = getenv('VERCEL') ? sys_get_temp_dir() . '/vnlcs-data' : ROOT . '/data';
+    $storage = getenv('VNL_STORAGE') ?: (getenv('VERCEL') ? sys_get_temp_dir() . '/vnlcs-data' : ROOT . '/data');
     define('STORAGE', $storage);
 }
 if (!is_dir(STORAGE . '/cache')) {
