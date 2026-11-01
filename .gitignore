@@ -1,0 +1,26 @@
+# Secrets
+config/secrets.php
+
+# Reference material from third-party templates: never committed or uploaded.
+# NOTES.md is our own writing and is kept for review.
+reference/*
+!reference/NOTES.md
+
+# Raw client / old-site content
+content/
+
+# Runtime data
+data/cache/*
+!data/cache/.gitkeep
+data/instagram.json
+data/*.tmp
+media/ig/*
+!media/ig/.gitkeep
+
+# Tooling output
+reports/
+dist/
+node_modules/
+sanity/node_modules/
+sanity/dist/
+.DS_Store
