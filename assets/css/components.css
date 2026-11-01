@@ -466,6 +466,8 @@
 .ticker .strip { flex: 1; min-width: 0; }
 .ticker .strip__group > * { padding: .65rem 1.75rem; white-space: nowrap; }
 .ticker a { color: var(--paper-ink); font-weight: 700; text-decoration: none; }
+.ticker a.ticker__label { color: #fff; }
+.ticker a.ticker__label:hover { text-decoration: underline; }
 .ticker a:hover { text-decoration: underline; }
 .ticker time { font-size: .875rem; color: var(--paper-muted); margin-right: .5rem; font-weight: 700; }
 .ticker .tag--new { margin-left: .45rem; transform: none; background: var(--paper-accent); color: #fff; }

@@ -71,10 +71,11 @@ $year = date('Y');
   <div class="mobile-bar" role="navigation" aria-label="Quick contact">
     <a href="tel:<?= e(cfg('phones')[0]['tel']) ?>"><?= icon('phone') ?>Call</a>
     <a href="/admissions/#enquire" class="mobile-bar__primary"><?= icon('file') ?>Enquire</a>
-  </div>
   <a class="whatsapp-fab" href="<?= e(whatsapp_chat_url('Hello, I would like to know about admissions at Veer New Look Central School.')) ?>" rel="noopener">
     <?= icon('whatsapp') ?><span class="visually-hidden">Chat with the school on WhatsApp</span>
   </a>
+  </div>
+
 
   <div class="wipe" aria-hidden="true"><span class="wipe__duster"></span></div>
 

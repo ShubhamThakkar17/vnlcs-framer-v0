@@ -264,3 +264,39 @@ function theme_toggle(string $class = ''): string
         . '<button type="button" data-theme-set="whiteboard" aria-pressed="false">Whiteboard</button>'
         . '</div>';
 }
+
+/** Inner-page hero: breadcrumb, eyebrow, stacked H1, lead and an optional doodle. */
+function page_hero(string $eyebrow, array $lines, string $lead, array $crumbs, string $doodleName = '', string $extra = ''): string
+{
+    $h = '<section class="page-hero ' . e($extra) . '"><div class="container page-hero__inner">';
+    if (count($crumbs) > 1) {
+        $h .= '<nav class="crumbs" aria-label="Breadcrumb"><ol role="list">';
+        $last = count($crumbs) - 1;
+        foreach (array_values($crumbs) as $i => [$name, $path]) {
+            $h .= $i === $last
+                ? '<li><span aria-current="page">' . e($name) . '</span></li>'
+                : '<li><a href="' . e($path) . '">' . e($name) . '</a></li>';
+        }
+        $h .= '</ol></nav>';
+    }
+    $h .= '<p class="eyebrow">' . e($eyebrow) . '</p><h1>';
+    foreach ($lines as $line) {
+        $h .= '<span class="line">' . $line . '</span> ';
+    }
+    $h .= '</h1>';
+    if ($lead !== '') {
+        $h .= '<p class="lead page-hero__lead">' . $lead . '</p>';
+    }
+    if ($doodleName !== '') {
+        $h .= doodle($doodleName, 'page-hero__doodle');
+    }
+    return $h . '</div></section>';
+}
+
+/** A chalk portrait frame for leadership cards. */
+function portrait_card(string $role, string $name, string $note = ''): string
+{
+    return '<li class="portrait"><div class="portrait__frame"><span>[PHOTO: ' . e($role) . ']</span></div>'
+        . '<h3>' . e($name) . '</h3><p class="portrait__role">' . e($role) . '</p>'
+        . ($note !== '' ? '<p class="muted small">' . $note . '</p>' : '') . '</li>';
+}

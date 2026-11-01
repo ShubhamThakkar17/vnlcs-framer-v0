@@ -57,3 +57,21 @@
     }
   });
 })();
+
+/* Google Map facade: the iframe loads only when asked. */
+(function () {
+  'use strict';
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-map-load]');
+    if (!b) return;
+    var box = b.closest('[data-map-src]');
+    var f = document.createElement('iframe');
+    f.src = box.getAttribute('data-map-src');
+    f.title = 'Map: Veer New Look Central School, Godhra Road, Halol';
+    f.loading = 'lazy';
+    f.referrerPolicy = 'no-referrer-when-downgrade';
+    f.className = 'map-frame';
+    box.innerHTML = '';
+    box.appendChild(f);
+  });
+})();

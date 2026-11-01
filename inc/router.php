@@ -10,6 +10,10 @@ declare(strict_types=1);
 define('ROOT', dirname(__DIR__));
 $uri = rawurldecode(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/');
 $query = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_QUERY);
+if (strpos($uri, '//') !== false) {
+    header('Location: ' . preg_replace('#/{2,}#', '/', $uri) . ($query ? '?' . $query : ''), true, 301);
+    exit;
+}
 
 // 1. Old site URLs (and old PDF folders) -> 301
 $redirects = require ROOT . '/inc/redirects.php';

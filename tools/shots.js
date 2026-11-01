@@ -21,7 +21,7 @@ fs.mkdirSync(OUT, { recursive: true });
         const page = await ctx.newPage();
         page.on('console', m => { if (m.type() === 'error') console.log('  console error:', m.text()); });
         page.on('pageerror', e => console.log('  page error:', e.message));
-        await page.goto(BASE + p, { waitUntil: 'networkidle' });
+        await page.goto(BASE.replace(/\/$/, '') + '/' + p.replace(/^\//, ''), { waitUntil: 'networkidle' });
         // Scroll through so on-scroll chalk marks draw, then return to top.
         await page.evaluate(async () => {
           for (let y = 0; y < document.body.scrollHeight; y += 400) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 60)); }

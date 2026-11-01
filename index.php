@@ -223,23 +223,7 @@ $reels = array_slice(reels_data()['items'], 0, 6);
         <p class="lead">Simple and friendly. Our office will guide you at every step.</p>
         <?= taped_photo('school reception', 'Our office will help you', null, 'steps__photo') ?>
       </div>
-      <ol class="steps__list" role="list">
-        <li class="step">
-          <span class="step__num" aria-hidden="true">1</span>
-          <h3>Enquire</h3>
-          <p>Fill in the enquiry form, call the office or send a WhatsApp message.</p>
-        </li>
-        <li class="step">
-          <span class="step__num" aria-hidden="true">2</span>
-          <h3>Visit &amp; Interact</h3>
-          <p>Come to the campus with your child, see the classrooms and meet our teachers.</p>
-        </li>
-        <li class="step">
-          <span class="step__num" aria-hidden="true">3</span>
-          <h3>Enrol</h3>
-          <p>Complete the admission form and submit the documents at the school office.</p>
-        </li>
-      </ol>
+      <?php require ROOT . '/partials/steps.php'; ?>
     </div>
   </section>
 
@@ -247,28 +231,7 @@ $reels = array_slice(reels_data()['items'], 0, 6);
   <section class="section why" aria-labelledby="why-title">
     <div class="container">
       <?= section_heading('Why Veer New Look', ['Four reasons', 'parents <span class="hl">choose us</span>'], 'why-title', 'section-head--center') ?>
-      <ul class="why__grid" role="list">
-        <li class="why__item">
-          <?= doodle('abc', 'why__icon') ?>
-          <h3>Qualified teachers</h3>
-          <p>Teachers for every stage, from Nursery to Class 12.</p>
-        </li>
-        <li class="why__item">
-          <?= doodle('beaker', 'why__icon') ?>
-          <h3>Labs and computer rooms</h3>
-          <p>Physics, Chemistry, Biology, Maths and Fine Arts labs, and two computer labs.</p>
-        </li>
-        <li class="why__item">
-          <?= doodle('sun', 'why__icon') ?>
-          <h3>Safe campus and transport</h3>
-          <p>A caring campus on Godhra Road. <span class="placeholder">[TRANSPORT DETAILS TO CONFIRM]</span></p>
-        </li>
-        <li class="why__item">
-          <?= doodle('bat', 'why__icon') ?>
-          <h3>Activities and sports</h3>
-          <p>An activity room, a play area with a splash pool and sandpit, and sports.</p>
-        </li>
-      </ul>
+      <?php require ROOT . '/partials/why.php'; ?>
     </div>
   </section>
 
