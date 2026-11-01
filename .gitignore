@@ -26,3 +26,4 @@ node_modules/
 sanity/node_modules/
 sanity/dist/
 .DS_Store
+assets/img/src/

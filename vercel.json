@@ -7,6 +7,15 @@
   },
   "routes": [
     {
+      "src": "/(.*)",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Frame-Options": "SAMEORIGIN"
+      },
+      "continue": true
+    },
+    {
       "src": "/(config|cron|inc|partials|sanity|tools|reference|content|reports|dist)(/.*)?",
       "dest": "/api/vercel.php"
     },
@@ -15,7 +24,7 @@
       "dest": "/api/vercel.php"
     },
     {
-      "src": "/(.*)\\.(php|md|sh|lock|ini|log)",
+      "src": "/((.*)\\.(php|md|sh|lock|ini|log)|(vercel|package|package-lock)\\.json)",
       "dest": "/api/vercel.php"
     },
     {

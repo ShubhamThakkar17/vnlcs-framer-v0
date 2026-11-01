@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /styletile.html
+
+Sitemap: https://veernewlookschool.com/sitemap.xml

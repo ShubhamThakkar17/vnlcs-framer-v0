@@ -1,0 +1,5 @@
+# Only the reels feed is public. Everything else in /data is private.
+Require all denied
+<FilesMatch "^instagram(\.sample)?\.json$">
+  Require all granted
+</FilesMatch>

@@ -15,6 +15,12 @@ if (strpos($uri, '//') !== false) {
     exit;
 }
 
+// Same security headers as .htaccess (Vercel previews and local preview)
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: strict-origin-when-cross-origin');
+header('X-Frame-Options: SAMEORIGIN');
+header('Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()');
+
 // 1. Old site URLs (and old PDF folders) -> 301
 $redirects = require ROOT . '/inc/redirects.php';
 if (isset($redirects[$uri])) {
@@ -27,7 +33,7 @@ if (preg_match('#^/(2026_pdf|2021-pdf)/(.+)$#i', $uri, $m)) {
 }
 
 // 2. Private folders and files are never served.
-$private = '#^/(config|cron|inc|partials|lib|sanity|tools|reference|content|reports|dist|node_modules|api/vercel\.php)(/|$)|^/data/(?!instagram(\.sample)?\.json$)|\.(md|lock|sh|ini|log|tmp)$|/\.#i';
+$private = '#^/(config|cron|inc|partials|lib|sanity|tools|reference|content|reports|dist|node_modules|api/vercel\.php)(/|$)|^/data/(?!instagram(\.sample)?\.json$)|^/(vercel|package|package-lock|composer)\.json$|\.(md|lock|sh|ini|log|tmp|part|bak|sql)$|/\.#i';
 if (preg_match($private, $uri)) {
     not_found();
 }

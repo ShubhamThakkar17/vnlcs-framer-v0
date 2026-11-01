@@ -1,0 +1,13 @@
+{
+  "name": "vnlcs-tools",
+  "private": true,
+  "description": "Developer tools for the Veer New Look website. Not uploaded to Hostinger.",
+  "scripts": {
+    "images": "node optimise-images.js",
+    "contrast": "node contrast.js"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.0",
+    "sharp": "^0.34.0"
+  }
+}

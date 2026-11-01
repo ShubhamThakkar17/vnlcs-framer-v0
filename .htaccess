@@ -1,0 +1,102 @@
+# ==========================================================================
+#  Veer New Look Central School, Halol: Apache / LiteSpeed rules (Hostinger)
+#  Keep the redirect list in sync with inc/redirects.php and REDIRECTS.md.
+# ==========================================================================
+
+Options -Indexes -MultiViews
+DirectoryIndex index.php index.html
+ErrorDocument 404 /404.php
+ErrorDocument 403 /404.php
+AddDefaultCharset utf-8
+
+AddType image/avif .avif
+AddType image/webp .webp
+AddType font/woff2 .woff2
+AddType application/manifest+json .webmanifest
+AddType video/webm .webm
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ---- 1. One address: https://veernewlookschool.com (no www) ----------------
+  RewriteCond %{HTTP_HOST} ^www\.veernewlookschool\.com$ [NC]
+  RewriteRule ^ https://veernewlookschool.com%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^veernewlookschool\.com$ [NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://veernewlookschool.com%{REQUEST_URI} [R=301,L]
+
+  # ---- 2. Never serve private folders or files (answer 404) -------------------
+  RewriteRule ^(config|cron|inc|partials|sanity|tools|reference|content|reports|dist|node_modules)(/|$) - [R=404,L]
+  RewriteRule ^data/(?!instagram(\.sample)?\.json$) - [R=404,L]
+  RewriteRule ^api/vercel\.php$ - [R=404,L]
+  RewriteRule (^|/)\.(?!well-known/) - [R=404,L]
+  RewriteRule ^(vercel|package|package-lock|composer)\.json$ - [R=404,L]
+  RewriteRule \.(md|sh|lock|ini|log|tmp|part|bak|sql)$ - [R=404,L,NC]
+
+  # ---- 3. Old website addresses -> new pages (301) ----------------------------
+  RewriteRule ^index\.html$                 /                          [R=301,L]
+  RewriteRule ^page3\.html$                 /                          [R=301,L]
+  RewriteRule ^aboutus\.html$               /about/                    [R=301,L]
+  RewriteRule ^profile\.html$               /about/                    [R=301,L]
+  RewriteRule ^whynewlook\.html$            /about/#why                [R=301,L,NE]
+  RewriteRule ^directorsdesk\.html$         /about/#director           [R=301,L,NE]
+  RewriteRule ^principalsdesk\.html$        /about/#principal          [R=301,L,NE]
+  RewriteRule ^committee\.html$             /about/#committee          [R=301,L,NE]
+  RewriteRule ^staff\.html$                 /about/#staff              [R=301,L,NE]
+  RewriteRule ^facilities\.html$            /facilities/               [R=301,L]
+  RewriteRule ^academyoverview\.html$       /academics/                [R=301,L]
+  RewriteRule ^syllabus\.html$              /academics/#curriculum     [R=301,L,NE]
+  RewriteRule ^examination_timetable\.html$ /notices/?cat=school       [R=301,L]
+  RewriteRule ^transfercertificate\.html$   /cbse-disclosure/#tc       [R=301,L,NE]
+  RewriteRule ^importantlinks21\.html$      /notices/#official-links   [R=301,L,NE]
+  RewriteRule ^activities\.html$            /gallery/                  [R=301,L]
+  RewriteRule ^contactus\.html$             /admissions/#contact       [R=301,L,NE]
+
+  # Old PDF folders keep working: /2026_pdf/x.pdf and /2021-pdf/x.pdf -> /docs/x.pdf
+  RewriteRule ^(?:2026_pdf|2021-pdf)/(.+)$  /docs/$1                   [R=301,L,NC]
+
+  # ---- 4. Pretty URLs -----------------------------------------------------------
+  RewriteRule ^notices/([a-z0-9][a-z0-9-]*)/?$ notices/view.php?slug=$1 [L,QSA]
+  RewriteRule ^sitemap\.xml$ sitemap.php [L]
+</IfModule>
+
+# ---- Compression ------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml application/manifest+json
+</IfModule>
+
+# ---- Caching ------------------------------------------------------------------------
+# CSS and JS are linked with ?v=<file time>, so they can be cached for a year.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(svg|png|jpe?g|webp|avif|gif|ico|mp4|webm)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.pdf$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  <FilesMatch "^instagram(\.sample)?\.json$">
+    Header set Cache-Control "public, max-age=300"
+  </FilesMatch>
+</IfModule>
+
+# ---- Security headers -------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+  # Only the services the site really uses: Web3Forms (form), YouTube and Google Maps (on click),
+  # Sanity CDN (notice PDFs/photos), Instagram CDN and Behold (reels fallback).
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://cdn.sanity.io https://i.ytimg.com https://*.cdninstagram.com https://*.fbcdn.net https://behold.pictures https://*.behold.pictures; media-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://behold.pictures https://*.behold.pictures; connect-src 'self' https://api.web3forms.com https://feeds.behold.so; frame-src https://www.youtube-nocookie.com https://www.google.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+</IfModule>
+
+# ---- PHP ------------------------------------------------------------------------------
+<IfModule mod_php.c>
+  php_flag display_errors Off
+  php_flag expose_php Off
+</IfModule>
