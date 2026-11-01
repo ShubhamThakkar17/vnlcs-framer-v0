@@ -51,6 +51,18 @@ const check = (l, ok, extra = '') => { console.log((ok ? '  pass  ' : '  FAIL  '
   }
   check(`${links.size} internal links resolve`, broken.length === 0, broken.join(', '));
 
+  console.log('Small screens');
+  const wide = [];
+  for (const p of PAGES) for (const w of [320, 375, 414]) {
+    const sp = await b.newPage({ viewport: { width: w, height: 800 } });
+    await sp.goto(BASE + p);
+    await sp.waitForTimeout(300);
+    const sw = await sp.evaluate(() => document.documentElement.scrollWidth);
+    if (sw > w) wide.push(`${p} @${w}px = ${sw}px`);
+    await sp.close();
+  }
+  check('no sideways scrolling at 320, 375 and 414 px', wide.length === 0, wide.join(', '));
+
   console.log('Themes');
   const ctx = await b.newContext();
   const t = await ctx.newPage();

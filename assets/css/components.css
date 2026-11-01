@@ -794,3 +794,7 @@ main > .section:last-child { padding-bottom: var(--space-section); }
 .section-head--split { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem 2rem; }
 .section-head p:not(.eyebrow) { margin-top: .9rem; color: var(--ink-muted); }
 .section-head--center p:not(.eyebrow) { margin-inline: auto; }
+
+/* Scroll containers must be positioned, or absolutely positioned children (e.g. .visually-hidden
+   text) escape the clipping and widen the page on phones. */
+.reels, .table-wrap, .jump ul, .gallery-strip, .strip { position: relative; }
