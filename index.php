@@ -10,7 +10,7 @@ $page = [
     'description' => 'Veer New Look Central School, Halol: a CBSE-affiliated, English-medium, co-educational school from Nursery to Class 12, on Godhra Road since 2005. Enquire for admission.',
     'path' => '/',
     'jsonld' => [school_schema()],
-    'scripts' => ['reels.js'],
+    'scripts' => [/* 'reels.js' */],   // reels section commented out for now (see section 7 below)
     'body_class' => 'page-home',
 ];
 require ROOT . '/partials/head.php';
@@ -21,7 +21,7 @@ $previewNotes = array_values(array_filter([
     board_notices('school', 1)[0] ?? null,
     board_notices('newsletter', 1)[0] ?? null,
 ]));
-$reels = array_slice(reels_data()['items'], 0, 6);
+// $reels = array_slice(reels_data()['items'], 0, 6);   // reels section commented out for now
 ?>
 <main id="main">
 
@@ -190,6 +190,12 @@ $reels = array_slice(reels_data()['items'], 0, 6);
     </div>
   </section>
 
+<?php
+/* ------------------------------------------------------------------------
+   7. Live from Instagram: COMMENTED OUT FOR NOW (client request).
+   To bring it back: remove this comment wrapper, restore 'reels.js' in
+   $page['scripts'] and the $reels line at the top of this file.
+------------------------------------------------------------------------
   <!-- 7. Live from Instagram -->
   <section class="section reels-section" aria-labelledby="reels-title">
     <div class="container">
@@ -214,6 +220,8 @@ $reels = array_slice(reels_data()['items'], 0, 6);
     </div>
   </section>
 
+------------------------------------------------------------------------ */
+?>
   <!-- 8. Admission in 3 steps -->
   <section class="section steps" aria-labelledby="steps-title">
     <div class="container steps__grid">

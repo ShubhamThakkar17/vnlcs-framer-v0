@@ -28,6 +28,7 @@ Read `BRIEF.md` for the full spec. This file holds the rules and tokens that mus
 - **Marker theme** has no edge filters (`--heading-filter` and `--line-filter` are `none`): marker strokes are clean.
 - **Deploy pack (Phase 7):** `tools/build-dist.sh` builds `dist/public_html/` + a zip with only live files (no Studio, tools, notes, styletile, router, secrets). Tested on Apache with `tools/test-htaccess.sh`.
 - **Tests:** see the table in README.md. Re-run contrast, axe, test-site, test-htaccess and Lighthouse after design or routing changes.
+- **Reels hidden for now (client request):** the home "Live from Instagram" section and the Gallery reels wall are wrapped in PHP block comments (no markup sent) and `reels.js` is not loaded. The cron scripts, `reels.js` and `render_reel()` are untouched; un-comment to restore. `tools/test-reels.js` will fail until then.
 - **Fonts** are subset to Basic Latin + common punctuation + ₹ with `pyftsubset`.
 
 ## Client facts (do not alter)

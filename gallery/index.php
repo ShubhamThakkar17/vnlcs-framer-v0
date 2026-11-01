@@ -17,7 +17,7 @@ $page = [
     'description' => 'Photos, videos and Instagram reels from school life at Veer New Look Central School, Halol.',
     'path' => $album ? '/gallery/?album=' . $album['slug'] : '/gallery/',
     'crumbs' => $crumbs,
-    'scripts' => ['reels.js', 'gallery.js'],
+    'scripts' => [/* 'reels.js', */ 'gallery.js'],   // reels wall commented out for now
     'body_class' => 'page-gallery',
 ];
 require ROOT . '/partials/head.php';
@@ -37,7 +37,7 @@ foreach ($albums as $a) {
         }
     }
 }
-$reels = array_slice(reels_data()['items'], 0, 12);
+// $reels = array_slice(reels_data()['items'], 0, 12);   // reels wall commented out for now
 ?>
 <main id="main">
 <?php if ($album): ?>
@@ -107,6 +107,12 @@ $reels = array_slice(reels_data()['items'], 0, 12);
     </div>
   </section>
 
+<?php
+/* ------------------------------------------------------------------------
+   Instagram reels wall: COMMENTED OUT FOR NOW (client request).
+   To bring it back: remove this comment wrapper, restore 'reels.js' in
+   $page['scripts'] and the $reels line near the top of this file.
+------------------------------------------------------------------------
   <section class="section" aria-labelledby="wall-title">
     <div class="container">
       <div class="section-head section-head--split">
@@ -135,6 +141,8 @@ $reels = array_slice(reels_data()['items'], 0, 12);
       </div>
     </div>
   </section>
+------------------------------------------------------------------------ */
+?>
 <?php endif; ?>
 </main>
 <?php require ROOT . '/partials/footer.php'; ?>

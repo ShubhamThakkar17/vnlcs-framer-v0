@@ -66,7 +66,7 @@ When the school sends an item, replace the placeholder in the file listed and ti
 | Leadership portraits | About | as above | Open |
 | Gallery strip (6) | Home | as above, or from the latest album | Open |
 | Event albums and YouTube links | Gallery | **Sanity: Photo albums** (staff) | Open |
-| Instagram reels | Home, Gallery | Live once both accounts are Professional and tokens are in `config/secrets.php` | Open (sample reels shown) |
+| Instagram reels | Home, Gallery | Sections are **commented out for now**. Re-enable in `index.php` and `gallery/index.php` once both accounts are Professional and tokens are in `config/secrets.php` | Hidden |
 
 ## 6. Accounts and keys (KeshavCo)
 
