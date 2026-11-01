@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en-IN" data-theme="blackboard">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style tile · Veer New Look Central School, Halol</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1E2B25">
+  <script>
+    /* Set the theme before first paint so there is no flash. Default: Blackboard. */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('vnl-theme'); } catch (e) {}
+      var theme = t === 'whiteboard' ? 'whiteboard' : 'blackboard';
+      document.documentElement.setAttribute('data-theme', theme);
+      if (theme === 'whiteboard') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#FAFAF7');
+    })();
+  </script>
+  <link rel="preload" href="assets/fonts/cabin-sketch-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kalam-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    /* Style-tile-only layout helpers */
+    .tile-section { padding-block: clamp(56px, 6vw, 96px); border-top: 2px dashed var(--smudge); }
+    .tile-section > .container > h2 { margin-bottom: 1.25rem; }
+    .tile-grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+    .swatches { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); padding: 0; list-style: none; }
+    .swatch { font-family: var(--font-data); font-size: .9rem; }
+    .swatch__chip { height: 76px; margin-bottom: .45rem; border-radius: var(--wobble-2); border: 2px solid var(--line); }
+    .swatch code { display: block; color: var(--ink-muted); }
+    .specimen { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); align-items: start; }
+    .label { font-family: var(--font-data); font-size: .85rem; font-weight: 700; color: var(--ink-muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: .35rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; }
+    .doodles { display: flex; flex-wrap: wrap; gap: 1.75rem 2.25rem; align-items: center; padding: 0; list-style: none; }
+    .doodles li { display: grid; justify-items: center; gap: .4rem; font-family: var(--font-data); font-size: .85rem; color: var(--ink-muted); }
+    .data-table { border-collapse: collapse; width: 100%; max-width: 560px; font-size: var(--fs-data); }
+    .data-table th, .data-table td { text-align: left; padding: .55rem .75rem; border-bottom: 1px solid var(--line); }
+    .data-table th { color: var(--accent-1); font-weight: 800; }
+    .heading-demo { position: relative; }
+    .heading-demo .doodle { position: absolute; }
+    .tile-intro { padding-block: clamp(40px, 5vw, 72px) 0; }
+    .tile-footer { padding: 2.5rem 0 3rem; border-top: 4px solid var(--frame); color: var(--ink-muted); font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <!-- Shared SVG filters: chalk edges for headings and outlines (decorative). -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="chalk-rough" x="-2%" y="-5%" width="104%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="chalk-line" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="2" seed="9" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="2" result="g"/>
+      <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  3.2 0 0 0 -.75" result="m"/>
+      <feComposite in="d" in2="m" operator="in"/>
+    </filter>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+  <div class="top-strip">
+    <div class="container top-strip__inner">
+      <ul role="list" aria-label="Contact">
+        <li><a href="tel:+912676225955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9 3l1.6 4.2-2 1.3a11 11 0 0 0 6.9 6.9l1.3-2L21 15l-.5 2.4c-.2 1-1.1 1.7-2.1 1.6C10.6 18.5 5.5 13.4 5 5.6c-.1-1 .6-1.9 1.6-2.1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>02676 225955</a></li>
+        <li><a href="tel:+918000201153"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>+91 80002 01153</a></li>
+        <li><a href="mailto:veer.newlook@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>veer.newlook@gmail.com</a></li>
+      </ul>
+      <ul role="list" aria-label="Instagram">
+        <li><a href="https://www.instagram.com/vnlcs_halol/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.1" fill="currentColor"/></svg>@vnlcs_halol</a></li>
+        <li><a href="https://www.instagram.com/veernewlookschoolhalol/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.1" fill="currentColor"/></svg>@veernewlookschoolhalol</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <span class="brand__name">Veer New Look</span>
+        <span class="brand__place">Central School, Halol</span>
+      </a>
+      <div class="theme-toggle" role="group" aria-label="Board style">
+        <button type="button" data-theme-set="blackboard" aria-pressed="true">Blackboard</button>
+        <span class="theme-toggle__sep" aria-hidden="true">/</span>
+        <button type="button" data-theme-set="whiteboard" aria-pressed="false">Whiteboard</button>
+      </div>
+    </div>
+  </div>
+  </header>
+
+  <main id="main">
+    <section class="tile-intro">
+      <div class="container">
+        <p class="eyebrow">Phase 1 · Style tile</p>
+        <h1><span class="line">Play,</span> <span class="line">Learn &amp;</span> <span class="line"><span data-annotate="underline" data-annotate-color="accent-2">Grow Together</span></span></h1>
+        <p class="lead" style="margin-top:1.25rem">Every building block of the site in one place. Use the little board in the header to switch between Blackboard and Whiteboard. All sample text in square brackets is placeholder.</p>
+      </div>
+    </section>
+
+    <!-- 1. Colours -->
+    <section class="tile-section" aria-labelledby="t-colours">
+      <div class="container">
+        <p class="eyebrow">Tokens</p>
+        <h2 id="t-colours">Colours</h2>
+        <ul class="swatches" role="list" data-swatches>
+          <li class="swatch"><div class="swatch__chip" style="background:var(--board)"></div>Board<code data-var="--board"></code></li>
+          <li class="swatch"><div class="swatch__chip" style="background:var(--frame)"></div>Frame<code data-var="--frame"></code></li>
+          <li class="swatch"><div class="swatch__chip" style="background:var(--ink)"></div>Ink<code data-var="--ink"></code></li>
+          <li class="swatch"><div class="swatch__chip" style="background:var(--accent-1)"></div>Accent 1<code data-var="--accent-1"></code></li>
+          <li class="swatch"><div class="swatch__chip" style="background:var(--accent-2)"></div>Accent 2<code data-var="--accent-2"></code></li>
+          <li class="swatch"><div class="swatch__chip" style="background:var(--accent-3)"></div>Accent 3<code data-var="--accent-3"></code></li>
+          <li class="swatch"><div class="swatch__chip" style="background:var(--accent-4)"></div>Accent 4<code data-var="--accent-4"></code></li>
+          <li class="swatch"><div class="swatch__chip" style="background:var(--smudge)"></div>Smudge<code data-var="--smudge"></code></li>
+          <li class="swatch"><div class="swatch__chip" style="background:var(--paper)"></div>Paper (notices)<code data-var="--paper"></code></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. Type -->
+    <section class="tile-section" aria-labelledby="t-type">
+      <div class="container">
+        <p class="eyebrow">Our school</p>
+        <h2 id="t-type"><span class="line">Type that</span> <span class="line">feels <span data-annotate="circle" data-annotate-color="accent-4">hand-written</span></span></h2>
+        <div class="specimen" style="margin-top:2rem">
+          <div class="stack">
+            <p class="label">Display · Cabin Sketch · H1 / H2</p>
+            <p class="h2" aria-hidden="true">Admissions open</p>
+            <p class="label" style="margin-top:1.5rem">H3 · Kalam Bold</p>
+            <h3>Science labs and two computer rooms</h3>
+            <p class="label" style="margin-top:1.5rem">Body · Kalam Regular · 18 px on mobile</p>
+            <p>Veer New Look Central School is a CBSE-affiliated, English-medium, co-educational school in Halol, teaching Nursery to Class 12 since 2005. <a href="#t-type">This is a link.</a></p>
+          </div>
+          <div class="stack">
+            <p class="label">Data · Nunito · tables, dates, numbers, forms</p>
+            <table class="data-table">
+              <caption class="visually-hidden">Sample data table</caption>
+              <thead><tr><th scope="col">Document</th><th scope="col">Updated</th></tr></thead>
+              <tbody>
+                <tr><td>[Affiliation letter]</td><td><time datetime="2026-04-01">01 Apr 2026</time></td></tr>
+                <tr><td>[Fee structure]</td><td><time datetime="2026-04-01">01 Apr 2026</time></td></tr>
+                <tr><td>[Academic calendar]</td><td><time datetime="2026-04-01">01 Apr 2026</time></td></tr>
+              </tbody>
+            </table>
+            <p class="label" style="margin-top:1.5rem">Eyebrow</p>
+            <p class="eyebrow">Notice board</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Buttons -->
+    <section class="tile-section" aria-labelledby="t-buttons">
+      <div class="container">
+        <p class="eyebrow">Admissions</p>
+        <h2 id="t-buttons">Chalk buttons</h2>
+        <p class="muted" style="margin-bottom:1.5rem">Hover to see the chalk thicken and a little dust fall.</p>
+        <div class="row">
+          <a class="btn btn--primary" href="#t-buttons">Enquire for Admission</a>
+          <a class="btn btn--secondary" href="#t-buttons">Take a Campus Tour</a>
+          <a class="btn btn--small" href="#t-buttons">Enquire Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Cards + pills -->
+    <section class="tile-section" aria-labelledby="t-cards">
+      <div class="container">
+        <p class="eyebrow">Stages</p>
+        <h2 id="t-cards"><span class="line">Pick a</span> <span class="line"><span class="hl">stage</span></span></h2>
+        <ul class="tile-grid" role="list" style="margin-top:2rem;padding:0">
+          <li class="card">
+            <span class="doodle doodle--abc doodle--wide card__icon" aria-hidden="true"></span>
+            <h3>Pre-primary</h3>
+            <p>Nursery, LKG and UKG. Learning through play, stories and songs.</p>
+            <ul class="pills" role="list" style="margin-top:.9rem">
+              <li class="pill pill--age">Nursery</li><li class="pill pill--age">LKG</li><li class="pill pill--age">UKG</li>
+            </ul>
+          </li>
+          <li class="card">
+            <span class="doodle doodle--sum doodle--wide card__icon" aria-hidden="true"></span>
+            <h3>Primary</h3>
+            <p>Classes 1 to 5. Strong basics in reading, writing and numbers.</p>
+            <span class="card__meta">Classes 1–5</span>
+          </li>
+          <li class="card">
+            <span class="doodle doodle--beaker card__icon" aria-hidden="true"></span>
+            <h3>Senior Secondary</h3>
+            <p>Classes 11 and 12. [STREAMS: Science (PCM, PCB) and Commerce, to be confirmed]</p>
+            <span class="card__meta">Classes 11–12</span>
+          </li>
+        </ul>
+        <p class="label" style="margin-top:2.5rem">Facility pills</p>
+        <ul class="pills" role="list">
+          <li class="pill">Library</li><li class="pill">AV Room</li><li class="pill">Computer Labs</li><li class="pill">Science Labs</li><li class="pill">Activity Room</li><li class="pill">Play Area</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. Notices -->
+    <section class="tile-section" aria-labelledby="t-notes">
+      <div class="container">
+        <p class="eyebrow">Notice board</p>
+        <h2 id="t-notes">Taped notices</h2>
+        <ul class="notes" role="list" style="margin-top:2.5rem">
+          <li class="note-wrap">
+            <article class="note paper">
+              <div class="note__head"><span class="note__cat">CBSE Circular</span><time class="note__date" datetime="2026-10-28">28 Oct 2026</time><span class="tag tag--new">New</span></div>
+              <h3>[SAMPLE] CBSE circular title goes here</h3>
+              <p>[One-line summary of the circular, pasted by school staff.]</p>
+              <a class="note__link" href="#t-notes">Read notice</a>
+            </article>
+          </li>
+          <li class="note-wrap">
+            <article class="note paper">
+              <div class="note__head"><span class="note__cat">School Notice</span><time class="note__date" datetime="2026-10-20">20 Oct 2026</time></div>
+              <h3>[SAMPLE] School notice title</h3>
+              <p>[Short summary for parents, up to 200 characters.]</p>
+              <a class="note__link" href="#t-notes">Read notice</a>
+            </article>
+          </li>
+          <li class="note-wrap">
+            <article class="note paper">
+              <div class="note__head"><span class="note__cat">Newsletter</span><time class="note__date" datetime="2026-10-01">October 2026</time></div>
+              <h3>[SAMPLE] Monthly newsletter</h3>
+              <p>[Newsletter intro line.]</p>
+              <a class="note__link" href="#t-notes">Open newsletter (PDF)</a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. Reels -->
+    <section class="tile-section" aria-labelledby="t-reels">
+      <div class="container">
+        <p class="eyebrow">Live from Instagram</p>
+        <h2 id="t-reels">Reel frames</h2>
+        <ul class="reels" role="list" style="margin-top:1.5rem">
+          <li class="reel">
+            <a class="reel__phone" href="https://www.instagram.com/vnlcs_halol/" rel="noopener">
+              <div class="reel__screen">
+                <div class="reel__placeholder"><span class="doodle doodle--sun" aria-hidden="true" style="margin-inline:auto"></span>[REEL: thumbnail]</div>
+                <span class="reel__handle">@vnlcs_halol</span>
+              </div>
+              <p class="reel__caption">[First line of the reel caption]</p>
+            </a>
+          </li>
+          <li class="reel">
+            <a class="reel__phone" href="https://www.instagram.com/veernewlookschoolhalol/" rel="noopener">
+              <div class="reel__screen">
+                <div class="reel__placeholder"><span class="doodle doodle--globe" aria-hidden="true" style="margin-inline:auto"></span>[REEL: thumbnail]</div>
+                <span class="reel__handle">@veernewlookschoolhalol</span>
+              </div>
+              <p class="reel__caption">[First line of the reel caption]</p>
+            </a>
+          </li>
+          <li class="reel">
+            <a class="reel__phone" href="https://www.instagram.com/vnlcs_halol/" rel="noopener">
+              <div class="reel__screen">
+                <div class="reel__placeholder"><span class="doodle doodle--bat" aria-hidden="true" style="margin-inline:auto"></span>[REEL: thumbnail]</div>
+                <span class="reel__handle">@vnlcs_halol</span>
+              </div>
+              <p class="reel__caption">[First line of the reel caption]</p>
+            </a>
+          </li>
+        </ul>
+        <p class="muted small">In Phase 5 each frame holds a muted, looping video with a tap-to-unmute button.</p>
+      </div>
+    </section>
+
+    <!-- 7. Doodles -->
+    <section class="tile-section" aria-labelledby="t-doodles">
+      <div class="container">
+        <p class="eyebrow">Decoration</p>
+        <h2 id="t-doodles">Chalk doodles</h2>
+        <ul class="doodles" role="list" style="margin-top:1.5rem">
+          <li><span class="doodle doodle--star" aria-hidden="true"></span>Star</li>
+          <li><span class="doodle doodle--arrow" aria-hidden="true"></span>Arrow</li>
+          <li><span class="doodle doodle--sun" aria-hidden="true"></span>Sun</li>
+          <li><span class="doodle doodle--abc doodle--wide" aria-hidden="true"></span>ABC</li>
+          <li><span class="doodle doodle--sum doodle--wide" style="width:84px" aria-hidden="true"></span>1+1=2</li>
+          <li><span class="doodle doodle--beaker" aria-hidden="true"></span>Beaker</li>
+          <li><span class="doodle doodle--globe" aria-hidden="true"></span>Globe</li>
+          <li><span class="doodle doodle--bat" aria-hidden="true"></span>Cricket bat</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 8. Moving strips -->
+    <section class="tile-section" aria-labelledby="t-strips">
+      <div class="container">
+        <p class="eyebrow">Between sections</p>
+        <h2 id="t-strips">Three moving strips</h2>
+        <p class="muted">Paper tape for notices, chalk on the board for keywords, the wooden ledge for the tagline. Each has a pause button and stops for reduced motion.</p>
+      </div>
+
+      <p class="label container" style="margin-top:2rem">1 · Notice ticker</p>
+      <div class="ticker" id="ticker-sample" data-strip-label="notice ticker">
+        <span class="ticker__label">Notices</span>
+        <div class="strip" data-strip data-strip-controls="#ticker-sample">
+          <div class="strip__track">
+            <ul class="strip__group" role="list" style="margin:0;padding:0">
+              <li><time datetime="2026-10-28">28 Oct</time><a href="#t-notes">[SAMPLE] CBSE circular title</a><span class="tag tag--new">New</span></li>
+              <li><time datetime="2026-10-20">20 Oct</time><a href="#t-notes">[SAMPLE] School notice title</a></li>
+              <li><time datetime="2026-10-01">Oct</time><a href="#t-notes">[SAMPLE] October newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="label container" style="margin-top:2.5rem">2 · Keyword marquee</p>
+      <div class="marquee" id="marquee-sample" data-strip-label="keyword marquee" aria-label="What we offer">
+        <div class="strip" data-strip data-strip-controls="#marquee-sample">
+          <div class="strip__track">
+            <div class="strip__group"><span>CBSE Affiliated</span><span>Nursery to Class 12</span><span>Science &amp; Commerce</span><span>Smart Classrooms</span></div>
+          </div>
+        </div>
+        <div class="strip" data-strip data-strip-controls="#marquee-sample">
+          <div class="strip__track strip__track--reverse">
+            <div class="strip__group"><span>Labs</span><span>Transport</span><span>Sports</span><span>Since 2005</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="label container" style="margin-top:2.5rem">3 · Tagline rail</p>
+      <div class="rail" id="rail-sample" data-strip-label="tagline">
+        <div class="strip" data-strip data-strip-controls="#rail-sample">
+          <div class="strip__track">
+            <div class="strip__group"><span>Play, Learn &amp; Grow Together!</span><span>Play, Learn &amp; Grow Together!</span><span>Play, Learn &amp; Grow Together!</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="tile-footer">
+    <div class="container">
+      <p>Style tile for review · Veer New Look Central School, Halol · Website by <a href="https://keshavco.com" rel="noopener">KeshavCo</a></p>
+    </div>
+  </footer>
+
+  <script>
+    /* Style tile only: print each swatch's current value. */
+    (function () {
+      function paint() {
+        var cs = getComputedStyle(document.documentElement);
+        document.querySelectorAll('[data-var]').forEach(function (c) { c.textContent = cs.getPropertyValue(c.getAttribute('data-var')).trim(); });
+      }
+      paint();
+      document.addEventListener('themechange', paint);
+    })();
+  </script>
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/vendor/rough-notation.js" defer></script>
+  <script src="assets/js/chalk.js" defer></script>
+  <script src="assets/js/marquee.js" defer></script>
+</body>
+</html>

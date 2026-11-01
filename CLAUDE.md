@@ -18,6 +18,14 @@ Read `BRIEF.md` for the full spec. This file holds the rules and tokens that mus
 - Every public page is a `.php` file in a clean-URL folder (`/about/index.php`, etc.) that includes `partials/head.php`, `partials/header.php`, `partials/footer.php`. One source of truth for header/footer, no sync script, no build step. Pages that need no data are still plain markup with includes.
 - Old `.html` URLs are 301-redirected via `.htaccess` (see `REDIRECTS.md`).
 
+## Decisions log
+- **Phase 0 review (approved):** no sticky stacking programme cards (plain row/grid); keep all three moving strips, each in its own material: notice ticker = paper tape, keyword marquee = two rows of chalk on the board, tagline rail = wooden ledge. Type sizes in `reference/NOTES.md` are provisional; final tuning happens once the whole site is previewable.
+- **Contrast adjustments (Phase 1, by `tools/contrast.js`):** Whiteboard `--accent-3` #2E7D32 → #23652A and `--accent-4` #EA580C → #B03C0A (both failed 4.5:1 on card fills). Added `--focus-paper` for focus rings on paper notes. All other brief tokens unchanged.
+- **Cabin Sketch:** only the 400 file ships (51 KB, subset). Headings request weight 700 so browsers embolden it into solid chalk/marker strokes; the raw Regular cut is hatched and too busy on phones.
+- **Chalk outlines:** drawn with CSS (wobbly `border-radius` on pseudo-elements + the `#chalk-line` SVG filter), not Rough.js. Zero JS, no layout shift. Rough Notation (4 KB gz, MIT, self-hosted in `assets/js/vendor/`) handles underlines/circles.
+- **Marker theme** has no edge filters (`--heading-filter` and `--line-filter` are `none`): marker strokes are clean.
+- **Fonts** are subset to Basic Latin + common punctuation + ₹ with `pyftsubset`.
+
 ## Client facts (do not alter)
 - Veer New Look Central School, Halol ("Veer New Look" after first mention). CBSE, English medium, co-ed, Nursery to Class 12, Science (PCM, PCB) and Commerce. Founded 2005.
 - Manibhadra Veer Education Trust; part of the New Look Group of Institutions (https://newlookschool.com/), credited in the footer.

@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Design tokens. Two themes, one component set.
+   Every text/background pair is verified by `node tools/contrast.js`.
+   ========================================================================== */
+
+:root,
+[data-theme="blackboard"] {
+  color-scheme: dark;
+
+  /* Board */
+  --board: #1E2B25;          /* slate */
+  --board-deep: #17221D;     /* vignette, footer */
+  --frame: #6B4A2E;          /* wood */
+  --frame-light: #8A6340;
+  --frame-dark: #4A321E;
+  --frame-ink: #F3F0E8;      /* text on the wooden strip */
+
+  /* Chalk */
+  --ink: #F3F0E8;            /* chalk white */
+  --ink-muted: #C8C9BE;      /* secondary text */
+  --accent-1: #F6E27F;       /* chalk yellow: headings, primary CTA */
+  --accent-2: #F4A6B8;       /* chalk pink: highlights, New tags */
+  --accent-3: #9FD3F0;       /* chalk blue: links, secondary CTA */
+  --accent-4: #B5E3A1;       /* chalk green: icons, doodles */
+  --on-accent: #1E2B25;      /* text on a filled accent (button, tag) */
+
+  --smudge: rgba(243, 240, 232, .08);  /* card fills, eraser smudges */
+  --line: rgba(243, 240, 232, .78);    /* chalk outlines (non-text, >= 3:1) */
+  --dust: rgba(243, 240, 232, .07);    /* colour of the tiled noise */
+  --focus: #F6E27F;
+  --focus-paper: #1E2B25;    /* focus ring on paper notes */
+
+  /* Paper notes taped to the board */
+  --paper: #FBF5E2;
+  --paper-ink: #26303A;
+  --paper-muted: #555B60;
+  --paper-accent: #A2262F;   /* category label on paper */
+  --tape: rgba(240, 232, 200, .62);
+  --note-shadow: 0 10px 18px -8px rgba(0, 0, 0, .55);
+
+  /* Texture: chalk edges on headings and outlines; marker stays clean */
+  --heading-filter: url(#chalk-rough);
+  --line-filter: url(#chalk-line);
+}
+
+[data-theme="whiteboard"] {
+  color-scheme: light;
+
+  --board: #FAFAF7;
+  --board-deep: #EEF0F0;
+  --frame: #B8BCC2;          /* aluminium */
+  --frame-light: #D6D9DD;
+  --frame-dark: #8E939A;
+  --frame-ink: #1F2937;
+
+  /* Dry-erase marker */
+  --ink: #1F2937;            /* marker black */
+  --ink-muted: #4B5563;
+  --accent-1: #1D4ED8;       /* marker blue */
+  --accent-2: #C62828;       /* marker red */
+  --accent-3: #23652A;       /* marker green (darkened from #2E7D32 for AA on card fills) */
+  --accent-4: #B03C0A;       /* marker orange (darkened from #EA580C for AA on card fills) */
+  --on-accent: #FFFFFF;
+
+  --smudge: rgba(31, 41, 55, .06);
+  --line: rgba(31, 41, 55, .72);
+  --dust: rgba(31, 41, 55, .035);
+  --focus: #1D4ED8;
+  --focus-paper: #1D4ED8;
+
+  --paper: #FFF4BF;          /* sticky-note yellow, so it reads on white */
+  --paper-ink: #1F2937;
+  --paper-muted: #4B5563;
+  --paper-accent: #A61B1B;
+  --tape: rgba(29, 78, 216, .16);
+  --note-shadow: 0 8px 14px -8px rgba(31, 41, 55, .35);
+
+  --heading-filter: none;
+  --line-filter: none;
+}
+
+:root {
+  /* Type */
+  --font-display: "Cabin Sketch", "Kalam", "Comic Sans MS", cursive;
+  --font-hand: "Kalam", "Comic Sans MS", "Segoe Print", cursive;
+  --font-data: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Fluid sizes: 375 px -> 1440 px */
+  --fs-h1: clamp(2.875rem, 1.86rem + 4.32vw, 5.75rem);   /* 46 -> 92 */
+  --fs-h2: clamp(2.375rem, 1.71rem + 2.82vw, 4.25rem);   /* 38 -> 68 */
+  --fs-h3: clamp(1.375rem, 1.24rem + .56vw, 1.75rem);    /* 22 -> 28 */
+  --fs-body: clamp(1.125rem, 1.08rem + .19vw, 1.25rem);  /* 18 -> 20 */
+  --fs-small: 1rem;
+  --fs-eyebrow: clamp(.95rem, .9rem + .1vw, 1rem);
+  --fs-data: 1rem;
+
+  /* Space */
+  --container: 1280px;
+  --gutter: clamp(20px, 3vw, 40px);
+  --gap: clamp(24px, 2vw, 30px);
+  --space-section: clamp(80px, 10vw, 144px);
+
+  /* Hand-drawn shapes */
+  --wobble: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  --wobble-2: 18px 225px 22px 255px / 225px 22px 255px 18px;
+  --chalk-w: 2px;
+  --chalk-w-hover: 3.5px;
+
+  --ease: cubic-bezier(.3, .7, .3, 1);
+}
