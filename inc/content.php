@@ -49,9 +49,12 @@ function content_is_sample(): bool
 }
 
 /** Raw content (cached). */
-function content_raw(): array
+function content_raw(bool $reset = false): array
 {
     static $memo = null;
+    if ($reset) {
+        $memo = null;
+    }
     if ($memo !== null) {
         return $memo;
     }
@@ -81,9 +84,11 @@ function content_raw(): array
 
 function sanity_fetch(string $groq): ?array
 {
+    // api_host is only set by tests (tools/test-notices.php); live sites use the public CDN.
+    $host = cfg('sanity.api_host') ?: 'https://' . rawurlencode((string) cfg('sanity.project_id')) . '.apicdn.sanity.io';
     $url = sprintf(
-        'https://%s.apicdn.sanity.io/v%s/data/query/%s?query=%s',
-        rawurlencode((string) cfg('sanity.project_id')),
+        '%s/v%s/data/query/%s?query=%s',
+        rtrim((string) $host, '/'),
         cfg('sanity.api_version'),
         rawurlencode((string) cfg('sanity.dataset')),
         rawurlencode($groq)
@@ -288,10 +293,8 @@ function portable_text(array $blocks): string
             $html .= "<li>$inner</li>";
             continue;
         }
-        $tag = ['h2' => 'h2', 'h3' => 'h3', 'h4' => 'h4', 'blockquote' => 'blockquote'][$b['style'] ?? 'normal'] ?? 'p';
-        if ($tag === 'h2') {
-            $tag = 'h3'; // the page H1/H2 belong to the layout
-        }
+        // The notice title is the page H1, so Studio "Heading" (h3) renders as h2 and "Small heading" (h4) as h3.
+        $tag = ['h2' => 'h2', 'h3' => 'h2', 'h4' => 'h3', 'blockquote' => 'blockquote'][$b['style'] ?? 'normal'] ?? 'p';
         $html .= "<$tag>$inner</$tag>";
     }
     if ($openList) {
