@@ -26,6 +26,8 @@ Read `BRIEF.md` for the full spec. This file holds the rules and tokens that mus
 - **Cabin Sketch:** only the 400 file ships (51 KB, subset). Headings request weight 700 so browsers embolden it into solid chalk/marker strokes; the raw Regular cut is hatched and too busy on phones.
 - **Chalk outlines:** drawn with CSS (wobbly `border-radius` on pseudo-elements + the `#chalk-line` SVG filter), not Rough.js. Zero JS, no layout shift. Rough Notation (4 KB gz, MIT, self-hosted in `assets/js/vendor/`) handles underlines/circles.
 - **Marker theme** has no edge filters (`--heading-filter` and `--line-filter` are `none`): marker strokes are clean.
+- **Deploy pack (Phase 7):** `tools/build-dist.sh` builds `dist/public_html/` + a zip with only live files (no Studio, tools, notes, styletile, router, secrets). Tested on Apache with `tools/test-htaccess.sh`.
+- **Tests:** see the table in README.md. Re-run contrast, axe, test-site, test-htaccess and Lighthouse after design or routing changes.
 - **Fonts** are subset to Basic Latin + common punctuation + ₹ with `pyftsubset`.
 
 ## Client facts (do not alter)

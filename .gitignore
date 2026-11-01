@@ -12,6 +12,7 @@ content/
 # Runtime data
 data/cache/*
 !data/cache/.gitkeep
+!data/cache/.htaccess
 data/instagram.json
 data/*.tmp
 data/tokens.json

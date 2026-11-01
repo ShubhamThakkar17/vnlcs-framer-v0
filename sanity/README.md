@@ -9,13 +9,13 @@ It is deployed to Sanity's own hosting (`https://veernewlook.sanity.studio`) and
 cd sanity
 npm install
 npx sanity login
-npx sanity init --env          # choose "Create new project", name it "Veer New Look", dataset "production"
 ```
 
 Then:
 
-1. Put the project ID in `sanity/.env` as `SANITY_STUDIO_PROJECT_ID=xxxxxxxx` and in the website's
-   `inc/config.php` (`'sanity' => ['project_id' => 'xxxxxxxx', ...]`).
+1. Create a project at https://www.sanity.io/manage ("Veer New Look", dataset `production`). Put its project ID
+   in `sanity/.env` as `SANITY_STUDIO_PROJECT_ID=xxxxxxxx` and in the website's `inc/config.php`
+   (`'sanity' => ['project_id' => 'xxxxxxxx', ...]`).
 2. Make the dataset public (read-only): `npx sanity dataset visibility set production public`.
 3. Deploy the Studio: `npm run deploy`.
 4. Invite staff: `npx sanity users invite name@example.com --role editor`.
