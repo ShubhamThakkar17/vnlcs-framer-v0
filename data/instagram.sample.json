@@ -1,0 +1,95 @@
+{
+ "_comment": "SAMPLE ONLY. Placeholder items shown until cron/instagram-fetch.php writes data/instagram.json with real reels.",
+ "generated_at": "2026-11-01T00:00:00+05:30",
+ "sample": true,
+ "items": [
+  {
+   "id": "sample-1",
+   "account": "vnlcs_halol",
+   "media_type": "VIDEO",
+   "product_type": "REELS",
+   "caption": "[SAMPLE REEL 1] Caption from @vnlcs_halol appears here.",
+   "permalink": "https://www.instagram.com/vnlcs_halol/",
+   "timestamp": "2026-10-28T10:00:00+05:30",
+   "thumb": null,
+   "video": null
+  },
+  {
+   "id": "sample-2",
+   "account": "veernewlookschoolhalol",
+   "media_type": "VIDEO",
+   "product_type": "REELS",
+   "caption": "[SAMPLE REEL 2] Caption from @veernewlookschoolhalol appears here.",
+   "permalink": "https://www.instagram.com/veernewlookschoolhalol/",
+   "timestamp": "2026-10-25T10:00:00+05:30",
+   "thumb": null,
+   "video": null
+  },
+  {
+   "id": "sample-3",
+   "account": "vnlcs_halol",
+   "media_type": "VIDEO",
+   "product_type": "REELS",
+   "caption": "[SAMPLE REEL 3] Caption from @vnlcs_halol appears here.",
+   "permalink": "https://www.instagram.com/vnlcs_halol/",
+   "timestamp": "2026-10-22T10:00:00+05:30",
+   "thumb": null,
+   "video": null
+  },
+  {
+   "id": "sample-4",
+   "account": "veernewlookschoolhalol",
+   "media_type": "VIDEO",
+   "product_type": "REELS",
+   "caption": "[SAMPLE REEL 4] Caption from @veernewlookschoolhalol appears here.",
+   "permalink": "https://www.instagram.com/veernewlookschoolhalol/",
+   "timestamp": "2026-10-19T10:00:00+05:30",
+   "thumb": null,
+   "video": null
+  },
+  {
+   "id": "sample-5",
+   "account": "vnlcs_halol",
+   "media_type": "VIDEO",
+   "product_type": "REELS",
+   "caption": "[SAMPLE REEL 5] Caption from @vnlcs_halol appears here.",
+   "permalink": "https://www.instagram.com/vnlcs_halol/",
+   "timestamp": "2026-10-16T10:00:00+05:30",
+   "thumb": null,
+   "video": null
+  },
+  {
+   "id": "sample-6",
+   "account": "veernewlookschoolhalol",
+   "media_type": "VIDEO",
+   "product_type": "REELS",
+   "caption": "[SAMPLE REEL 6] Caption from @veernewlookschoolhalol appears here.",
+   "permalink": "https://www.instagram.com/veernewlookschoolhalol/",
+   "timestamp": "2026-10-13T10:00:00+05:30",
+   "thumb": null,
+   "video": null
+  },
+  {
+   "id": "sample-7",
+   "account": "vnlcs_halol",
+   "media_type": "VIDEO",
+   "product_type": "REELS",
+   "caption": "[SAMPLE REEL 7] Caption from @vnlcs_halol appears here.",
+   "permalink": "https://www.instagram.com/vnlcs_halol/",
+   "timestamp": "2026-10-10T10:00:00+05:30",
+   "thumb": null,
+   "video": null
+  },
+  {
+   "id": "sample-8",
+   "account": "veernewlookschoolhalol",
+   "media_type": "VIDEO",
+   "product_type": "REELS",
+   "caption": "[SAMPLE REEL 8] Caption from @veernewlookschoolhalol appears here.",
+   "permalink": "https://www.instagram.com/veernewlookschoolhalol/",
+   "timestamp": "2026-10-07T10:00:00+05:30",
+   "thumb": null,
+   "video": null
+  }
+ ]
+}

@@ -1,0 +1,567 @@
+{
+ "_comment": "SAMPLE CONTENT ONLY. Shown while no Sanity project is configured (inc/config.php > sanity.project_id). Every item is a placeholder.",
+ "settings": {
+  "admissionBannerText": "",
+  "sessionYear": "",
+  "tickerEnabled": true,
+  "emergencyBanner": ""
+ },
+ "notices": [
+  {
+   "id": "sample-1",
+   "title": "[SAMPLE] CBSE circular: title as published by CBSE",
+   "slug": "sample-cbse-circular",
+   "category": "cbse",
+   "date": "2026-10-30",
+   "summary": "[SAMPLE] One-line summary of the circular. Staff paste the official CBSE link below.",
+   "body": [
+    {
+     "_type": "block",
+     "_key": "a1",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a1s",
+       "text": "[SAMPLE] This is placeholder text. Real notices are written by school staff in Sanity Studio.",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a2",
+     "style": "h3",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a2s",
+       "text": "What parents need to know",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a3",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a3s",
+       "text": "[First point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a4",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a4s",
+       "text": "[Second point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a5",
+     "style": "normal",
+     "markDefs": [
+      {
+       "_key": "l1",
+       "_type": "link",
+       "href": "https://www.cbse.gov.in/"
+      }
+     ],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a5s",
+       "text": "Official source: ",
+       "marks": []
+      },
+      {
+       "_type": "span",
+       "_key": "a5t",
+       "text": "cbse.gov.in",
+       "marks": [
+        "l1"
+       ]
+      }
+     ]
+    }
+   ],
+   "attachment": null,
+   "externalLink": "https://www.cbse.gov.in/",
+   "pinned": false,
+   "expiryDate": null
+  },
+  {
+   "id": "sample-2",
+   "title": "[SAMPLE] School notice for parents",
+   "slug": "sample-school-notice",
+   "category": "school",
+   "date": "2026-10-24",
+   "summary": "[SAMPLE] Short summary for parents, up to 200 characters.",
+   "body": [
+    {
+     "_type": "block",
+     "_key": "a1",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a1s",
+       "text": "[SAMPLE] This is placeholder text. Real notices are written by school staff in Sanity Studio.",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a2",
+     "style": "h3",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a2s",
+       "text": "What parents need to know",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a3",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a3s",
+       "text": "[First point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a4",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a4s",
+       "text": "[Second point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a5",
+     "style": "normal",
+     "markDefs": [
+      {
+       "_key": "l1",
+       "_type": "link",
+       "href": "https://www.cbse.gov.in/"
+      }
+     ],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a5s",
+       "text": "Official source: ",
+       "marks": []
+      },
+      {
+       "_type": "span",
+       "_key": "a5t",
+       "text": "cbse.gov.in",
+       "marks": [
+        "l1"
+       ]
+      }
+     ]
+    }
+   ],
+   "attachment": null,
+   "externalLink": null,
+   "pinned": true,
+   "expiryDate": null
+  },
+  {
+   "id": "sample-3",
+   "title": "[SAMPLE] Event announcement",
+   "slug": "sample-event",
+   "category": "event",
+   "date": "2026-10-18",
+   "summary": "[SAMPLE] Date, time and place of the event.",
+   "body": [
+    {
+     "_type": "block",
+     "_key": "a1",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a1s",
+       "text": "[SAMPLE] This is placeholder text. Real notices are written by school staff in Sanity Studio.",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a2",
+     "style": "h3",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a2s",
+       "text": "What parents need to know",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a3",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a3s",
+       "text": "[First point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a4",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a4s",
+       "text": "[Second point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a5",
+     "style": "normal",
+     "markDefs": [
+      {
+       "_key": "l1",
+       "_type": "link",
+       "href": "https://www.cbse.gov.in/"
+      }
+     ],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a5s",
+       "text": "Official source: ",
+       "marks": []
+      },
+      {
+       "_type": "span",
+       "_key": "a5t",
+       "text": "cbse.gov.in",
+       "marks": [
+        "l1"
+       ]
+      }
+     ]
+    }
+   ],
+   "attachment": null,
+   "externalLink": null,
+   "pinned": false,
+   "expiryDate": null
+  },
+  {
+   "id": "sample-4",
+   "title": "[SAMPLE] Holiday notice",
+   "slug": "sample-holiday",
+   "category": "holiday",
+   "date": "2026-10-10",
+   "summary": "[SAMPLE] The school will remain closed on [DATE].",
+   "body": [
+    {
+     "_type": "block",
+     "_key": "a1",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a1s",
+       "text": "[SAMPLE] This is placeholder text. Real notices are written by school staff in Sanity Studio.",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a2",
+     "style": "h3",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a2s",
+       "text": "What parents need to know",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a3",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a3s",
+       "text": "[First point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a4",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a4s",
+       "text": "[Second point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a5",
+     "style": "normal",
+     "markDefs": [
+      {
+       "_key": "l1",
+       "_type": "link",
+       "href": "https://www.cbse.gov.in/"
+      }
+     ],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a5s",
+       "text": "Official source: ",
+       "marks": []
+      },
+      {
+       "_type": "span",
+       "_key": "a5t",
+       "text": "cbse.gov.in",
+       "marks": [
+        "l1"
+       ]
+      }
+     ]
+    }
+   ],
+   "attachment": null,
+   "externalLink": null,
+   "pinned": false,
+   "expiryDate": "2026-10-20"
+  },
+  {
+   "id": "sample-5",
+   "title": "[SAMPLE] Result announcement",
+   "slug": "sample-result",
+   "category": "result",
+   "date": "2026-09-28",
+   "summary": "[SAMPLE] Results are available from the school office.",
+   "body": [
+    {
+     "_type": "block",
+     "_key": "a1",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a1s",
+       "text": "[SAMPLE] This is placeholder text. Real notices are written by school staff in Sanity Studio.",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a2",
+     "style": "h3",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a2s",
+       "text": "What parents need to know",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a3",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a3s",
+       "text": "[First point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a4",
+     "style": "normal",
+     "listItem": "bullet",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a4s",
+       "text": "[Second point]",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "a5",
+     "style": "normal",
+     "markDefs": [
+      {
+       "_key": "l1",
+       "_type": "link",
+       "href": "https://www.cbse.gov.in/"
+      }
+     ],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "a5s",
+       "text": "Official source: ",
+       "marks": []
+      },
+      {
+       "_type": "span",
+       "_key": "a5t",
+       "text": "cbse.gov.in",
+       "marks": [
+        "l1"
+       ]
+      }
+     ]
+    }
+   ],
+   "attachment": null,
+   "externalLink": null,
+   "pinned": false,
+   "expiryDate": null
+  }
+ ],
+ "newsletters": [
+  {
+   "id": "sample-n1",
+   "title": "[SAMPLE] School newsletter",
+   "slug": "sample-newsletter",
+   "month": "2026-10-01",
+   "intro": "[SAMPLE] What happened at school this month.",
+   "body": [
+    {
+     "_type": "block",
+     "_key": "n1",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "n1s",
+       "text": "[SAMPLE] Newsletter text, if any. Most months this is a PDF.",
+       "marks": []
+      }
+     ]
+    }
+   ],
+   "cover": null,
+   "pdf": null
+  }
+ ],
+ "albums": [
+  {
+   "id": "sample-a1",
+   "name": "[SAMPLE] Annual Day",
+   "slug": "sample-annual-day",
+   "date": "2026-01-15",
+   "cover": null,
+   "photos": [],
+   "youtubeUrls": []
+  },
+  {
+   "id": "sample-a2",
+   "name": "[SAMPLE] Sports Day",
+   "slug": "sample-sports-day",
+   "date": "2025-12-10",
+   "cover": null,
+   "photos": [],
+   "youtubeUrls": []
+  },
+  {
+   "id": "sample-a3",
+   "name": "[SAMPLE] Science Exhibition",
+   "slug": "sample-science-exhibition",
+   "date": "2025-11-20",
+   "cover": null,
+   "photos": [],
+   "youtubeUrls": []
+  }
+ ]
+}

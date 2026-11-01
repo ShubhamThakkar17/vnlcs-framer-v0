@@ -8,20 +8,24 @@
   var ICON_PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3.5v16H7zM13.5 4H17v16h-3.5z" fill="currentColor"/></svg>';
   var ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor"/></svg>';
 
-  function fill(strip) {
+  function fill(strip, width) {
     var track = strip.querySelector('.strip__track');
     var group = track && track.querySelector('.strip__group');
     if (!group) return;
     // Repeat items until one group is at least as wide as the screen, then clone
     // the group so the -50% loop is seamless. Clones are hidden from assistive tech.
+    // One measurement, one write: no layout thrashing.
     var items = Array.prototype.slice.call(group.children);
-    var guard = 0;
-    while (group.scrollWidth < window.innerWidth && guard++ < 10) {
-      items.forEach(function (it) { group.appendChild(hide(it.cloneNode(true))); });
+    width = width || 1;
+    var copies = Math.min(10, Math.ceil(window.innerWidth / width) - 1);
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < copies; i++) {
+      items.forEach(function (it) { frag.appendChild(hide(it.cloneNode(true))); });
     }
+    group.appendChild(frag);
     track.appendChild(hide(group.cloneNode(true)));
     // Keep speed constant whatever the content length (~70 px per second).
-    var dur = Math.max(18, Math.round(group.scrollWidth / 70));
+    var dur = Math.max(18, Math.round(width * (copies + 1) / 70));
     track.style.setProperty('--duration', dur + 's');
   }
 
@@ -51,10 +55,24 @@
     host.appendChild(btn);
   }
 
+  // Strips only animate while on screen (saves battery and main-thread time).
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { en.target.classList.toggle('is-offscreen', !en.isIntersecting); });
+  }, { rootMargin: '100px 0px' }) : null;
+
   var hosts = new Map();
-  document.querySelectorAll('[data-strip]').forEach(function (strip) {
+  var strips = Array.prototype.slice.call(document.querySelectorAll('[data-strip]'));
+  if (!reduce) {
+    // Measure every strip first, then write: avoids forced reflows between strips.
+    var widths = strips.map(function (s) {
+      var g = s.querySelector('.strip__group');
+      return g ? g.scrollWidth : 0;
+    });
+    strips.forEach(function (s, i) { fill(s, widths[i]); });
+  }
+  strips.forEach(function (strip) {
     if (reduce) return;                     // static under reduced motion
-    fill(strip);
+    if (io) { strip.classList.add('is-offscreen'); io.observe(strip); }
     var sel = strip.getAttribute('data-strip-controls');
     var host = sel ? document.querySelector(sel) : strip;
     if (!hosts.has(host)) hosts.set(host, []);

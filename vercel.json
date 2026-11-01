@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/vercel.php": { "runtime": "vercel-php@0.7.4" }
+  },
+  "routes": [
+    { "src": "/(config|cron|inc|partials|sanity|tools|reference|content|reports|dist)(/.*)?", "dest": "/api/vercel.php" },
+    { "src": "/data/(?!instagram(\\.sample)?\\.json$).*", "dest": "/api/vercel.php" },
+    { "src": "/(.*)\\.(php|md|sh|lock|ini|log)", "dest": "/api/vercel.php" },
+    { "src": "/(index\\.html|page3\\.html|aboutus\\.html|profile\\.html|whynewlook\\.html|directorsdesk\\.html|principalsdesk\\.html|committee\\.html|staff\\.html|facilities\\.html|academyoverview\\.html|syllabus\\.html|examination_timetable\\.html|transfercertificate\\.html|importantlinks21\\.html|activities\\.html|contactus\\.html)", "dest": "/api/vercel.php" },
+    { "src": "/assets/(.*)", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "continue": true },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/api/vercel.php" }
+  ]
+}

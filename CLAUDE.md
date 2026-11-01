@@ -19,6 +19,8 @@ Read `BRIEF.md` for the full spec. This file holds the rules and tokens that mus
 - Old `.html` URLs are 301-redirected via `.htaccess` (see `REDIRECTS.md`).
 
 ## Decisions log
+- **Previews on Vercel (Phase 2):** `vercel.json` + `api/vercel.php` run the site through the community `vercel-php` runtime (approved by the client). `inc/router.php` is the shared front controller for Vercel and the local server; Hostinger uses `.htaccess` instead. Vercel's filesystem is read-only, so caches go to the temp dir there (`STORAGE` in `inc/bootstrap.php`).
+- **Content fallback:** while `sanity.project_id` is empty, notices/newsletters/albums/settings come from `data/content.sample.json` (every item marked [SAMPLE]). Reels fall back to `data/instagram.sample.json`.
 - **Phase 0 review (approved):** no sticky stacking programme cards (plain row/grid); keep all three moving strips, each in its own material: notice ticker = paper tape, keyword marquee = two rows of chalk on the board, tagline rail = wooden ledge. Type sizes in `reference/NOTES.md` are provisional; final tuning happens once the whole site is previewable.
 - **Contrast adjustments (Phase 1, by `tools/contrast.js`):** Whiteboard `--accent-3` #2E7D32 → #23652A and `--accent-4` #EA580C → #B03C0A (both failed 4.5:1 on card fills). Added `--focus-paper` for focus rings on paper notes. All other brief tokens unchanged.
 - **Cabin Sketch:** only the 400 file ships (51 KB, subset). Headings request weight 700 so browsers embolden it into solid chalk/marker strokes; the raw Regular cut is hatched and too busy on phones.
