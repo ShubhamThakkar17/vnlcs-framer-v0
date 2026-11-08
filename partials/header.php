@@ -45,7 +45,7 @@ $settings = site_settings();
     <div class="site-header">
       <div class="container site-header__inner">
         <a class="brand" href="/" aria-label="Veer New Look Central School, Halol: home">
-          <?= doodle('star', 'brand__mark') ?>
+          <img class="brand__logo" src="/assets/img/brand/logo-chalk-64.png" srcset="/assets/img/brand/logo-chalk-128.png 2x, /assets/img/brand/logo-chalk-192.png 3x" width="59" height="64" alt="" decoding="async">
           <span class="brand__text">
             <span class="brand__name">Veer New Look</span>
             <span class="brand__place">Central School, Halol</span>

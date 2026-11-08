@@ -62,6 +62,7 @@ When the school sends an item, replace the placeholder in the file listed and ti
 | About strip, steps, facilities strip, gallery strip | Home | Done: library, school entrance, computer lab, 6 event and daily-life photos | Done |
 | Facility photos | Facilities | Done for library, computer labs, science labs, sports ground, school buses. **Still needed:** AV room, air-conditioned classroom, Maths lab, Fine Arts lab, activity room, play area (splash pool and sandpit) | Partly done |
 | Stage photos | Academics | Done for pre-primary, primary, middle, secondary, senior secondary. Class-specific photos for Nursery, LKG and UKG would go on the programme cards | Partly done |
+| School logo | Header, footer, favicons, app icons, share image, Google logo | Done: the school's book-and-quill logo. A vector (SVG/PDF/AI) copy from the designer would make the small favicons sharper | Done |
 | Leadership portraits | About | Director and Principal photos | Open |
 | Staff photos | About | Done: two group photos of teachers at Business Junoon 2.0 | Done |
 | School photo albums | Gallery | Done: "Business Junoon 2.0" (12), "Raksha Bandhan" (3), "Around the school" (10), from `inc/photos.php` | Done |

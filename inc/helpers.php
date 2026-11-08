@@ -123,7 +123,7 @@ function school_schema(): array
         'name' => cfg('site_name'),
         'alternateName' => cfg('short_name'),
         'url' => abs_url('/'),
-        'logo' => abs_url('/assets/img/icon-512.png'),
+        'logo' => abs_url('/assets/img/brand/logo-512.png'),
         'image' => abs_url('/assets/img/og-default.png'),
         'slogan' => cfg('tagline'),
         'foundingDate' => (string) cfg('founded'),

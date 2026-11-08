@@ -47,8 +47,9 @@ $robots = $page['robots'] ?? 'index, follow';
   <link rel="stylesheet" href="<?= asset('css/base.css') ?>">
   <link rel="stylesheet" href="<?= asset('css/components.css') ?>">
   <link rel="stylesheet" href="<?= asset('css/pages.css') ?>">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/assets/img/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/img/icon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/icon-180.png">
   <meta property="og:type" content="<?= e($page['og_type'] ?? 'website') ?>">
   <meta property="og:site_name" content="<?= e($siteName) ?>">

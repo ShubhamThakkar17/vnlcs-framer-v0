@@ -205,7 +205,8 @@ Run them with the local server (or Apache) running. Most need Node with Playwrig
 | `tools/test-instagram.sh` | Instagram fetch and token refresh against a mock Graph API |
 | `node tools/test-reels.js video.webm` | reels play in view, pause out of view, unmute, pause control, filters |
 | `node tools/shots.js / /about/ ...` | screenshots at 375 and 1440 px (`reports/screens/`) |
-| `node tools/make-icons.js` | favicon PNGs and the chalk Open Graph image |
+| `node tools/make-logo.js` | logo files from `tools/brand/logo-source.png`: chalk-white header/footer logo, square logo for Google, favicons, app icons, `favicon.ico` |
+| `node tools/make-icons.js` | the chalk Open Graph image with the logo (run `make-logo.js` first; local server running) |
 | `tools/build-dist.sh` | the Hostinger zip |
 
 ## Folder map

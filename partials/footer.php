@@ -14,6 +14,7 @@ $year = date('Y');
 
     <div class="container site-footer__grid">
       <div class="site-footer__about">
+        <img class="site-footer__logo" src="/assets/img/brand/logo-chalk-128.png" srcset="/assets/img/brand/logo-chalk-192.png 1.5x" width="88" height="96" alt="School logo: an open book marked NLCS beside a quill in an inkpot" loading="lazy" decoding="async">
         <p class="site-footer__name">Veer New Look Central School</p>
         <p class="muted">CBSE affiliated · English medium · Co-educational<br>Nursery to Class 12 · Since <?= (int) cfg('founded') ?></p>
         <address>
