@@ -90,6 +90,7 @@ require ROOT . '/partials/head.php';
               </div>
               <h3><a class="note__title" href="<?= e($n['url']) ?>"><?= e($n['title']) ?></a></h3>
               <?php if ($n['summary']): ?><p><?= e($n['summary']) ?></p><?php endif; ?>
+              <?php if ($n['for_classes']): ?><p class="note__for">For: <?= e($n['for_classes']) ?></p><?php endif; ?>
               <?php if ($n['attachment']): ?><p class="note__has"><?= icon('file') ?> PDF attached</p><?php endif; ?>
             </article>
           </li>

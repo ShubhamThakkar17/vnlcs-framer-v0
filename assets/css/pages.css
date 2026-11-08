@@ -476,6 +476,11 @@
 }
 .notice-sheet::before { content: ""; position: absolute; top: -14px; left: 50%; width: 120px; height: 30px; background: var(--tape); transform: translateX(-50%) rotate(-2deg); }
 .notice-sheet__title { font-family: var(--font-hand); font-weight: 700; font-size: clamp(1.7rem, 1.3rem + 1.8vw, 2.6rem); line-height: 1.2; color: var(--paper-ink); filter: none; margin: .4rem 0 1rem; }
+.note__for { margin-top: .5rem; font-family: var(--font-data); font-size: .875rem; font-weight: 700; color: var(--paper-muted); }
+.notice-meta { display: flex; flex-wrap: wrap; gap: .35rem 1.5rem; margin: 0 0 1.1rem; font-family: var(--font-data); font-size: .9rem; }
+.notice-meta div { display: flex; gap: .4rem; }
+.notice-meta dt { font-weight: 700; color: var(--paper-muted); white-space: nowrap; }
+.notice-meta dd { margin: 0; overflow-wrap: anywhere; }
 .notice-sheet__summary { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.25rem; }
 .notice-sheet__expired { font-family: var(--font-data); font-weight: 700; color: var(--paper-accent); margin-bottom: 1rem; }
 .notice-sheet .prose { color: var(--paper-ink); }

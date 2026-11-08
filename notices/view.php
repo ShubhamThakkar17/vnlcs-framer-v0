@@ -27,7 +27,7 @@ $schema = [
     'publisher' => [
         '@type' => 'Organization',
         'name' => cfg('site_name'),
-        'logo' => ['@type' => 'ImageObject', 'url' => abs_url('/assets/img/icon-512.png')],
+        'logo' => ['@type' => 'ImageObject', 'url' => abs_url('/assets/img/brand/logo-512.png')],
     ],
 ];
 $page = [
@@ -61,6 +61,13 @@ $shareText = $n['title'] . ' | Veer New Look Central School, Halol';
           <?php if (is_new($n['date'])): ?><span class="tag tag--new">New</span><?php endif; ?>
         </div>
         <h1 class="notice-sheet__title"><?= e($n['title']) ?></h1>
+<?php if ($n['circular_no'] || $n['issued_by'] || $n['for_classes']): ?>
+        <dl class="notice-meta">
+          <?php if ($n['circular_no']): ?><div><dt>Circular no.</dt><dd><?= e($n['circular_no']) ?></dd></div><?php endif; ?>
+          <?php if ($n['issued_by']): ?><div><dt>Issued by</dt><dd><?= e($n['issued_by']) ?></dd></div><?php endif; ?>
+          <?php if ($n['for_classes']): ?><div><dt>For</dt><dd><?= e($n['for_classes']) ?></dd></div><?php endif; ?>
+        </dl>
+<?php endif; ?>
 <?php if ($n['expired']): ?>
         <p class="notice-sheet__expired">This notice has expired. It is kept in the archive for reference.</p>
 <?php endif; ?>

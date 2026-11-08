@@ -16,11 +16,20 @@ $page = [
 require ROOT . '/partials/head.php';
 
 $ticker = $settings['tickerEnabled'] ? board_notices(null, 3) : [];
+// One each of CBSE, school and newsletter when there is one, topped up to three from the rest of the board.
 $previewNotes = array_values(array_filter([
     board_notices('cbse', 1)[0] ?? null,
     board_notices('school', 1)[0] ?? null,
     board_notices('newsletter', 1)[0] ?? null,
 ]));
+foreach (board_notices() as $n) {
+    if (count($previewNotes) >= 3) {
+        break;
+    }
+    if (!in_array($n['id'], array_column($previewNotes, 'id'), true)) {
+        $previewNotes[] = $n;
+    }
+}
 // $reels = array_slice(reels_data()['items'], 0, 6);   // reels section commented out for now
 ?>
 <main id="main">

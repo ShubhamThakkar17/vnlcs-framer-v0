@@ -21,7 +21,7 @@ rm -rf "$OUT/assets/img/src"
 mkdir -p "$OUT/config"; cp config/.htaccess config/secrets.example.php "$OUT/config/"
 # Data: rules + sample files; live files are created on the server
 mkdir -p "$OUT/data/cache" "$OUT/media/ig" "$OUT/docs"
-cp data/.htaccess data/content.sample.json data/instagram.sample.json "$OUT/data/"
+cp data/.htaccess data/content.sample.json data/notices.json data/instagram.sample.json "$OUT/data/"
 cp data/cache/.htaccess "$OUT/data/cache/"
 find docs -maxdepth 1 -type f ! -name '.gitkeep' -exec cp {} "$OUT/docs/" \; 2>/dev/null || true
 touch "$OUT/media/ig/.keep" "$OUT/docs/.keep"

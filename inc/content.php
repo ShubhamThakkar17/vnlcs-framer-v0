@@ -4,8 +4,12 @@
  *
  * One GROQ request fetches everything from the public CDN, cached to
  * STORAGE/cache/sanity.json for 10 minutes. If Sanity is down, the last cache is
- * served. If no Sanity project is configured yet, the clearly marked sample file
- * data/content.sample.json is used so the site can be previewed.
+ * served.
+ *
+ * Before a Sanity project is connected:
+ *   - data/notices.json (if present) supplies the real notices: only items with
+ *     "status": "published" are shown. Newsletters and albums are empty.
+ *   - otherwise the clearly marked sample file data/content.sample.json is used.
  */
 declare(strict_types=1);
 
@@ -24,7 +28,8 @@ function sanity_query(): string
 {
   "notices": *[_type == "notice" && defined(slug.current) && !(_id in path("drafts.**"))] | order(date desc) {
     "id": _id, title, "slug": slug.current, category, date, summary, body,
-    "attachment": attachment.asset->url, externalLink, pinned, expiryDate
+    "attachment": attachment.asset->url, externalLink, pinned, expiryDate,
+    circularNo, issuedBy, forClasses
   },
   "newsletters": *[_type == "newsletter" && defined(slug.current) && !(_id in path("drafts.**"))] | order(month desc) {
     "id": _id, title, "slug": slug.current, month, intro, body,
@@ -43,9 +48,76 @@ function sanity_query(): string
 GROQ;
 }
 
+function sanity_connected(): bool
+{
+    return cfg('sanity.project_id') !== '' && cfg('sanity.project_id') !== null;
+}
+
+const LOCAL_NOTICES = ROOT . '/data/notices.json';
+
+/** True only when the site is showing the [SAMPLE] content (no Sanity and no data/notices.json). */
 function content_is_sample(): bool
 {
-    return cfg('sanity.project_id') === '' || cfg('sanity.project_id') === null;
+    return !sanity_connected() && !is_file(LOCAL_NOTICES);
+}
+
+/**
+ * Published notices from data/notices.json, in the same shape as the Sanity query.
+ * Body lines: plain text = paragraph, "## " = heading, "- " = bullet, [text](https://...) = link.
+ */
+function local_notices(bool $publishedOnly = true): array
+{
+    $doc = json_decode((string) @file_get_contents(LOCAL_NOTICES), true);
+    $out = [];
+    foreach (($doc['notices'] ?? []) as $n) {
+        if ($publishedOnly && ($n['status'] ?? '') !== 'published') {
+            continue;
+        }
+        $n['id'] = 'notice-' . $n['slug'];
+        $n['body'] = lines_to_blocks((array) ($n['body'] ?? []), $n['slug']);
+        $n['attachment'] = $n['attachment'] ?? null;
+        $out[] = $n;
+    }
+    return $out;
+}
+
+/** Turn simple text lines into Sanity portable-text blocks (also used by tools/notices-to-sanity.php). */
+function lines_to_blocks(array $lines, string $seed = ''): array
+{
+    $blocks = [];
+    foreach (array_values($lines) as $i => $line) {
+        $line = (string) $line;
+        $key = substr(md5($seed . '|' . $i), 0, 12);
+        $block = ['_type' => 'block', '_key' => $key, 'style' => 'normal', 'markDefs' => [], 'children' => []];
+        if (strncmp($line, '## ', 3) === 0) {
+            $block['style'] = 'h3';
+            $line = substr($line, 3);
+        } elseif (strncmp($line, '- ', 2) === 0) {
+            $block['listItem'] = 'bullet';
+            $block['level'] = 1;
+            $line = substr($line, 2);
+        }
+        // [text](url) links
+        $parts = preg_split('#\[([^\]]+)\]\(((?:https?://|/)[^)\s]+)\)#', $line, -1, PREG_SPLIT_DELIM_CAPTURE);
+        for ($j = 0, $n = count($parts); $j < $n; $j++) {
+            $spanKey = $key . 's' . $j;
+            if ($j % 3 === 0) {
+                if ($parts[$j] !== '') {
+                    $block['children'][] = ['_type' => 'span', '_key' => $spanKey, 'text' => $parts[$j], 'marks' => []];
+                }
+                continue;
+            }
+            $linkKey = $key . 'l' . $j;
+            $block['markDefs'][] = ['_type' => 'link', '_key' => $linkKey, 'href' => $parts[$j + 1]];
+            $block['children'][] = ['_type' => 'span', '_key' => $spanKey, 'text' => $parts[$j], 'marks' => [$linkKey]];
+            $j++;
+        }
+        if (!$block['children']) {
+            $block['children'][] = ['_type' => 'span', '_key' => $key . 's0', 'text' => '', 'marks' => []];
+        }
+        $blocks[] = $block;
+    }
+    return $blocks;
 }
 
 /** Raw content (cached). */
@@ -59,9 +131,13 @@ function content_raw(bool $reset = false): array
         return $memo;
     }
 
-    if (content_is_sample()) {
-        $memo = json_decode((string) file_get_contents(ROOT . '/data/content.sample.json'), true) ?: [];
-        return $memo;
+    if (!sanity_connected()) {
+        $sample = json_decode((string) file_get_contents(ROOT . '/data/content.sample.json'), true) ?: [];
+        if (!is_file(LOCAL_NOTICES)) {
+            return $memo = $sample;
+        }
+        // Real notices from data/notices.json; no sample newsletters or albums alongside them.
+        return $memo = ['notices' => local_notices(), 'newsletters' => [], 'albums' => [], 'settings' => $sample['settings'] ?? null];
     }
 
     $cacheFile = STORAGE . '/cache/sanity.json';
@@ -190,6 +266,9 @@ function all_notices(): array
             'expiry' => $expiry,
             'expired' => $expiry ? ($expiry < $today) : false,
             'cover' => null,
+            'circular_no' => (string) ($n['circularNo'] ?? ''),
+            'issued_by' => (string) ($n['issuedBy'] ?? ''),
+            'for_classes' => (string) ($n['forClasses'] ?? ''),
         ];
     }
     foreach ($raw['newsletters'] ?? [] as $n) {
@@ -209,6 +288,9 @@ function all_notices(): array
             'expiry' => null,
             'expired' => false,
             'cover' => $n['cover'] ?? null,
+            'circular_no' => '',
+            'issued_by' => '',
+            'for_classes' => '',
         ];
     }
     foreach ($items as &$it) {

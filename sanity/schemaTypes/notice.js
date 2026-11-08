@@ -73,6 +73,24 @@ export default defineType({
       validation: (Rule) => Rule.uri({scheme: ['http', 'https']}),
     }),
     defineField({
+      name: 'circularNo',
+      title: 'Circular number (optional)',
+      type: 'string',
+      description: 'As printed on the circular, e.g. "Acad-67/2026".',
+    }),
+    defineField({
+      name: 'issuedBy',
+      title: 'Issued by (optional)',
+      type: 'string',
+      description: 'e.g. "CBSE, Controller of Examinations".',
+    }),
+    defineField({
+      name: 'forClasses',
+      title: 'For which classes (optional)',
+      type: 'string',
+      description: 'e.g. "Class X, Class XII". Shown on the notice.',
+    }),
+    defineField({
       name: 'pinned',
       title: 'Pin to the top of the board',
       type: 'boolean',

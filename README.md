@@ -100,7 +100,7 @@ npx sanity users invite office@example.com --role editor
 2. In the Studio, open **Site settings**, set the admission session (e.g. 2027-28) and **Publish**.
 3. Post a test notice. It appears on the site within **10 minutes** (cache time), with its own URL.
 
-Until a project ID is set, the site shows clearly marked **[SAMPLE]** notices.
+Until a project ID is set, the site shows the notices in `data/notices.json` (only those with `"status": "published"`). Without that file it falls back to clearly marked **[SAMPLE]** notices. Step 6 of `sanity/README.md` imports `data/notices.json` into Sanity.
 
 ### 8. Instagram reels
 
@@ -200,6 +200,7 @@ Run them with the local server (or Apache) running. Most need Node with Playwrig
 | `tools/lighthouse.sh [url]` | Lighthouse mobile for Home, Notice Board, Gallery |
 | `node tools/test-site.js [url]` | titles, descriptions, JSON-LD, internal links, Blackboard-only theme, photos load with alt text, reduced motion |
 | `tools/test-htaccess.sh [url]` | 301s for every old URL, 404 for private files, headers, HTTPS and www rules |
+| `php tools/notices-to-sanity.php` | `data/notices.json` as a Sanity import file (published stay published, the rest arrive as drafts) |
 | `php tools/test-notices.php` | Sanity pipeline end to end against a mock CDN (fetch, cache, render, stale fallback) |
 | `node tools/test-form.js` | enquiry form validation, both inboxes, honeypot (Web3Forms mocked; needs test keys) |
 | `tools/test-instagram.sh` | Instagram fetch and token refresh against a mock Graph API |

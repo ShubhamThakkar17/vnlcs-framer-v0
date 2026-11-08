@@ -54,6 +54,26 @@ When the school sends an item, replace the placeholder in the file listed and ti
 | Infrastructure: campus area, classroom and lab sizes, internet, toilets, inspection video link | `cbse-disclosure/index.php` (`$infra`) | Open |
 | Transfer certificate information | `cbse-disclosure/index.php` | Open |
 
+## 4a. Notices waiting in `data/notices.json`
+
+These are ready in `data/notices.json` but not shown yet. Change `"status"` to `"published"` once done.
+
+| Notice | What is needed | Status |
+|---|---|---|
+| School newsletter, [MONTH YEAR] | The newsletter PDF and a short intro (add it in Sanity under Newsletters) | draft |
+| Board Exams 2027: what Class X and XII parents need to know | Pre-board exam dates, Principal's name | draft |
+| Admissions open for [SESSION 2027-28] | Session, classes with seats, form dates, last date, office hours, streams | draft |
+| CBSE Science Challenge: Round 1 for Classes VIII to X | Confirm the school is registered; Round 1 date and period; teacher in charge | draft |
+| Janjatiya Gaurav Divas celebration | Date, activities, classes (event ends 15 Nov) | draft |
+| Children's Day celebration | Date, activities, timing, dress (event ends 15 Nov) | draft |
+| Celebration of six years of Nasha Mukt Bharat Abhiyaan (NMBA) (Acad-75/2026) | Open [the circular](https://cbseacademic.nic.in/web_material/Circulars/2026/75_Circular_2026.pdf) once from India and confirm it is this circular (cbseacademic.nic.in did not open from our build machine) | check |
+| Aryabhata Ganit Challenge 2026 (Acad-74/2026) | Open [the circular](https://cbseacademic.nic.in/web_material/Circulars/2026/74_Circular_2026.pdf) once from India and confirm it is this circular (cbseacademic.nic.in did not open from our build machine) | check |
+| National Startup Awards 6.0: Student Innovator and Aspiring Entrepreneur Award (Acad-73/2026) | Open [the circular](https://cbseacademic.nic.in/web_material/Circulars/2026/73_Circular_2026.pdf) once from India and confirm it is this circular (cbseacademic.nic.in did not open from our build machine) | check |
+| CBSE Expression Series for the academic session 2026-27 (Acad-72/2026) | Open [the circular](https://cbseacademic.nic.in/web_material/Circulars/2026/72_Circular_2026.pdf) once from India and confirm it is this circular (cbseacademic.nic.in did not open from our build machine) | check |
+| Celebration of Janjatiya Gaurav Divas, 1 to 15 November 2026 (Acad-71/2026) | Open [the circular](https://cbseacademic.nic.in/web_material/Circulars/2026/71_Circular_2026.pdf) once from India and confirm it is this circular (cbseacademic.nic.in did not open from our build machine) | check |
+| CBSE Science Exhibition 2026-27 (Acad-69/2026) | Open [the circular](https://cbseacademic.nic.in/web_material/Circulars/2026/69_Circular_2026.pdf) once from India and confirm it is this circular (cbseacademic.nic.in did not open from our build machine) | check |
+| Observance of Vigilance Awareness Week 2026 in schools (Acad-68/2026) | Open [the circular](https://cbseacademic.nic.in/web_material/Circulars/2026/68_Circular_2026.pdf) once from India and confirm it is this circular (cbseacademic.nic.in did not open from our build machine) | check |
+
 ## 5. Photos and media
 
 | Placeholder | Where | How to fill | Status |
@@ -74,7 +94,7 @@ When the school sends an item, replace the placeholder in the file listed and ti
 
 | Item | Where | Status |
 |---|---|---|
-| Sanity project ID | `inc/config.php` + `sanity/.env` | Open (sample notices shown until then) |
+| Sanity project ID | `inc/config.php` + `sanity/.env` | Open (the site shows the published notices in `data/notices.json` until then; import them with `tools/notices-to-sanity.php`) |
 | Web3Forms access keys (one per school inbox) | `config/secrets.php` | Open (form offers email instead until then) |
 | Instagram long-lived tokens for both accounts | `config/secrets.php` | Open |
 | Alert email for token failures | `config/secrets.php` | Open |
@@ -82,6 +102,6 @@ When the school sends an item, replace the placeholder in the file listed and ti
 
 ## 7. Sample content to remove at launch
 
-- `data/content.sample.json`: used only while `sanity.project_id` is empty. Harmless to keep.
+- `data/content.sample.json`: used only if `data/notices.json` is missing and `sanity.project_id` is empty. Harmless to keep.
 - `data/instagram.sample.json`: used only until the first cron run writes `data/instagram.json`.
 - `styletile.html`: design reference; `noindex` and disallowed in `robots.txt`. Excluded from the deploy zip.

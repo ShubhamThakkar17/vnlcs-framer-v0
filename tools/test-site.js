@@ -2,7 +2,7 @@
 // Usage: node tools/test-site.js [base-url]   (default http://127.0.0.1:8080)
 const { chromium } = require('playwright');
 const BASE = (process.argv[2] || 'http://127.0.0.1:8080').replace(/\/$/, '');
-const PAGES = ['/', '/about/', '/academics/', '/facilities/', '/gallery/', '/notices/', '/notices/sample-cbse-circular', '/admissions/', '/cbse-disclosure/'];
+const PAGES = ['/', '/about/', '/academics/', '/facilities/', '/gallery/', '/notices/', '/notices/cbse-date-sheet-2027-class-10-12', '/admissions/', '/cbse-disclosure/'];
 let fail = 0;
 const check = (l, ok, extra = '') => { console.log((ok ? '  pass  ' : '  FAIL  ') + l + (ok || !extra ? '' : '  -> ' + extra)); if (!ok) fail++; };
 
@@ -35,7 +35,7 @@ const check = (l, ok, extra = '') => { console.log((ok ? '  pass  ' : '  FAIL  '
     for (const s of info.ld) { try { const j = JSON.parse(s); if (!j['@type']) throw new Error('no @type'); } catch (e) { ldOk = false; ldErr = p + ' ' + e.message; } }
     if (p === '/') check('home has School JSON-LD with parentOrganization', info.ld.some(s => s.includes('"@type":"School"') && s.includes('parentOrganization')));
     if (p === '/about/') check('inner pages have BreadcrumbList JSON-LD', info.ld.some(s => s.includes('BreadcrumbList')));
-    if (p.startsWith('/notices/sample')) check('notice page has NewsArticle JSON-LD', info.ld.some(s => s.includes('NewsArticle')));
+    if (p.startsWith('/notices/cbse-')) check('notice page has NewsArticle JSON-LD', info.ld.some(s => s.includes('NewsArticle')));
     info.links.forEach(h => { if (h.startsWith('/') && !h.startsWith('//')) links.add(h.split('#')[0] || '/'); });
   }
   check('every page has a unique title', [...titles.values()].every(v => v.length === 1), JSON.stringify([...titles].filter(([, v]) => v.length > 1)));
@@ -81,6 +81,21 @@ const check = (l, ok, extra = '') => { console.log((ok ? '  pass  ' : '  FAIL  '
   await bp.addInitScript(() => { Object.defineProperty(window, 'localStorage', { get() { throw new Error('blocked'); } }); });
   await bp.goto(BASE + '/');
   check('works when localStorage is blocked (private mode)', (await bp.getAttribute('html', 'data-theme')) === 'blackboard');
+
+  console.log('Notices (data/notices.json)');
+  const np = await b.newPage();
+  await np.goto(BASE + '/notices/');
+  const board = await np.evaluate(() => ({ count: document.querySelectorAll('.notes--board .note').length, text: document.body.innerText }));
+  check('notice board shows real notices, no [SAMPLE] items', board.count > 0 && !board.text.includes('[SAMPLE]') && !board.text.includes('sample notices'), board.count);
+  await np.goto(BASE + '/notices/cbse-date-sheet-2027-class-10-12');
+  const sheet = await np.evaluate(() => document.querySelector('.notice-sheet').innerText);
+  check('date sheet notice shows Wed 17 Feb and its circular number', sheet.includes('Wed 17 Feb') && !sheet.includes('Tue 17 Feb') && sheet.includes('CBSE/Date Sheet/X-XII/2026-27'));
+  for (const slug of ['childrens-day-2026', 'cbse-acad-74-2026-aryabhata-ganit-challenge']) {
+    const r = await np.request.get(BASE + '/notices/' + slug, { maxRedirects: 0 });
+    check(`unpublished notice /notices/${slug} is not served`, r.status() === 404, r.status());
+  }
+  const raw = await np.request.get(BASE + '/data/notices.json', { maxRedirects: 0 });
+  check('data/notices.json is not downloadable', raw.status() === 404, raw.status());
 
   console.log('Photos');
   const ph = await b.newPage({ viewport: { width: 375, height: 800 } });

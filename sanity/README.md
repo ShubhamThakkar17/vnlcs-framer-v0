@@ -20,6 +20,18 @@ Then:
 3. Deploy the Studio: `npm run deploy`.
 4. Invite staff: `npx sanity users invite name@example.com --role editor`.
 5. Open the Studio, go to **Site settings**, set the admission session, and publish.
+6. Bring in the notices the site already shows (from `data/notices.json`):
+
+   ```bash
+   cd ..
+   php tools/notices-to-sanity.php > sanity/import/notices.ndjson
+   cd sanity
+   npx sanity dataset import import/notices.ndjson production --missing
+   ```
+
+   Published notices arrive published. Drafts ("draft" = waiting for school details, "check" = official
+   link not yet verified) arrive as Studio drafts, so nothing unchecked goes live. `--missing` skips any
+   notice already in Sanity, so running it twice is safe.
 
 The website reads published content from the Sanity CDN and caches it for 10 minutes, so a new notice
 appears on the site within 10 minutes. No token is needed or used in the browser.

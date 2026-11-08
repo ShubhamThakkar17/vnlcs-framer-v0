@@ -28,7 +28,7 @@ for p in /config/secrets.example.php /cron/instagram-fetch.php /inc/config.php /
 done
 
 echo "Public paths (200)"
-for p in / /about/ /academics/ /facilities/ /gallery/ /notices/ /admissions/ /cbse-disclosure/ /notices/sample-cbse-circular \
+for p in / /about/ /academics/ /facilities/ /gallery/ /notices/ /admissions/ /cbse-disclosure/ /notices/cbse-date-sheet-2027-class-10-12 \
          /api/notices.php?limit=3 /sitemap.xml /robots.txt /data/instagram.sample.json /assets/css/base.css /favicon.ico; do
   code=$(curl -s -o /dev/null -w "%{http_code}" "$BASE$p")
   [[ "$code" = 200 ]] && ok "$p" || bad "$p answered $code"

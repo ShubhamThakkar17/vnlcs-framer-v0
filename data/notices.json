@@ -1,0 +1,456 @@
+{
+  "_comment": [
+    "Notices shown on the site while the school's Sanity project is not connected yet.",
+    "Only items with \"status\": \"published\" appear. \"draft\" = waiting for school details, \"check\" = official link not yet verified.",
+    "Body lines: plain text is a paragraph, \"## \" starts a heading, \"- \" a bullet, [text](https://...) a link.",
+    "categories: cbse, school, event, result, holiday. externalLink = the official circular. Dates are YYYY-MM-DD.",
+    "To move these into Sanity later: php tools/notices-to-sanity.php > sanity/import/notices.ndjson (see sanity/README.md)."
+  ],
+  "notices": [
+    {
+      "status": "draft",
+      "note": "Newsletters are their own type in Sanity (month, intro, PDF). Add the real one in Studio under Newsletters; this placeholder is never shown.",
+      "title": "School newsletter, [MONTH YEAR]",
+      "slug": "newsletter-month-year",
+      "category": "newsletter",
+      "date": "2026-11-30",
+      "summary": "[SHORT INTRO: highlights of the month at Veer New Look]",
+      "body": [
+        "[NEWSLETTER PDF AND INTRO FROM SCHOOL]"
+      ],
+      "externalLink": null,
+      "pinned": false,
+      "expiryDate": null,
+      "circularNo": null,
+      "issuedBy": null,
+      "forClasses": null
+    },
+    {
+      "status": "draft",
+      "note": "Needs details from the school (the [BRACKETS]). Fill them in, then set status to \"published\".",
+      "title": "Board Exams 2027: what Class X and XII parents need to know",
+      "slug": "board-exams-2027-parents",
+      "category": "school",
+      "date": "2026-11-09",
+      "summary": "CBSE board exams start on 16 February 2027. Here are the key dates for our Class X and XII students and what happens before then.",
+      "body": [
+        "Dear Parents,",
+        "CBSE has announced the Board Examination dates for 2027. Theory papers begin on Tuesday 16 February 2027 at 10:30 am. Class X papers end on 9 March and Class XII papers end on 9 April 2027.",
+        "Please read the full date sheet in our CBSE Circular notice and mark your child's subjects on a calendar at home.",
+        "## Before the board exams",
+        "- Pre-board examinations: [DATES FROM SCHOOL]",
+        "- Practical exams and internal assessment: CBSE has scheduled these from January 2027. Our timetable will follow once CBSE issues its circular for regular-session schools.",
+        "- Admit cards: CBSE releases these closer to the exams. The school will hand them over and inform you.",
+        "For any query, please contact the school office on 02676 225955.",
+        "[PRINCIPAL'S NAME]",
+        "Principal"
+      ],
+      "externalLink": "https://veernewlookschool.com/notices/cbse-date-sheet-2027-class-10-12",
+      "pinned": true,
+      "expiryDate": "2027-04-10",
+      "circularNo": null,
+      "issuedBy": null,
+      "forClasses": "Class X, Class XII"
+    },
+    {
+      "status": "draft",
+      "note": "Needs details from the school (the [BRACKETS]). Fill them in, then set status to \"published\".",
+      "title": "Admissions open for [SESSION 2027-28]",
+      "slug": "admissions-open-2027-28",
+      "category": "school",
+      "date": "2026-11-09",
+      "summary": "Admission enquiries are open for Nursery to Class [X], with [STREAMS] in Class XI. Enquire online or visit the school office.",
+      "body": [
+        "Veer New Look Central School invites admission enquiries for [SESSION 2027-28], from Nursery to Class [CLASSES WITH SEATS].",
+        "## How to apply",
+        "- Step 1: Fill in the enquiry form on our Admissions page, or call the office.",
+        "- Step 2: Visit the campus and meet our team.",
+        "- Step 3: Complete the admission formalities.",
+        "Forms available from: [DATE]",
+        "Last date: [DATE]",
+        "Office hours: [OFFICE HOURS]",
+        "Contact: 02676 225955, +91 8000201153"
+      ],
+      "externalLink": "https://veernewlookschool.com/admissions/",
+      "pinned": false,
+      "expiryDate": "2027-06-30",
+      "circularNo": null,
+      "issuedBy": null,
+      "forClasses": null
+    },
+    {
+      "status": "draft",
+      "note": "Needs details from the school (the [BRACKETS]). Fill them in, then set status to \"published\".",
+      "title": "CBSE Science Challenge: Round 1 for Classes VIII to X",
+      "slug": "science-challenge-round-1-school",
+      "category": "school",
+      "date": "2026-11-09",
+      "summary": "[CONFIRM SCHOOL IS REGISTERED] Round 1 of the CBSE Science Challenge will be held at school on [DATE]. Two students from each class go to Round 2.",
+      "body": [
+        "Round 1 of the CBSE Science Challenge for Classes VIII, IX and X will be held at school on [DATE AND PERIOD].",
+        "It is a multiple-choice paper set by CBSE. Based on the results, the school will select 2 students each from Classes VIII, IX and X for Round 2, a computer-based test conducted by CBSE, tentatively between 30 November and 4 December 2026.",
+        "Science teacher in charge: [NAME]"
+      ],
+      "externalLink": "https://veernewlookschool.com/notices/cbse-acad-67-2026-science-challenge",
+      "pinned": false,
+      "expiryDate": "2026-12-05",
+      "circularNo": null,
+      "issuedBy": null,
+      "forClasses": "Classes VIII to X"
+    },
+    {
+      "status": "draft",
+      "note": "Needs details from the school (the [BRACKETS]). Fill them in, then set status to \"published\".",
+      "title": "Janjatiya Gaurav Divas celebration",
+      "slug": "janjatiya-gaurav-divas-2026",
+      "category": "event",
+      "date": "2026-11-09",
+      "summary": "[CONFIRM] Our students will mark Janjatiya Gaurav Divas on [DATE] with [ACTIVITIES].",
+      "body": [
+        "As part of the CBSE celebration of Janjatiya Gaurav Divas (1 to 15 November 2026), our school will hold [ACTIVITIES, e.g. a special assembly, drawing and essay activities] on [DATE].",
+        "Classes taking part: [CLASSES]"
+      ],
+      "externalLink": null,
+      "pinned": false,
+      "expiryDate": "2026-11-15",
+      "circularNo": null,
+      "issuedBy": null,
+      "forClasses": null
+    },
+    {
+      "status": "draft",
+      "note": "Needs details from the school (the [BRACKETS]). Fill them in, then set status to \"published\".",
+      "title": "Children's Day celebration",
+      "slug": "childrens-day-2026",
+      "category": "event",
+      "date": "2026-11-09",
+      "summary": "[CONFIRM] Children's Day will be celebrated at school on [DATE] with [ACTIVITIES].",
+      "body": [
+        "Children's Day falls on Saturday 14 November 2026. Our school will celebrate on [DATE] with [ACTIVITIES].",
+        "Timing: [TIME]. Dress: [UNIFORM OR COLOUR DRESS]."
+      ],
+      "externalLink": null,
+      "pinned": false,
+      "expiryDate": "2026-11-15",
+      "circularNo": null,
+      "issuedBy": null,
+      "forClasses": null
+    },
+    {
+      "status": "published",
+      "title": "CBSE Board Examinations 2027: date sheet for Class X and Class XII",
+      "slug": "cbse-date-sheet-2027-class-10-12",
+      "category": "cbse",
+      "date": "2026-11-06",
+      "summary": "Board exams begin on 16 February 2027. Class X ends on 9 March and Class XII on 9 April. Every paper starts at 10:30 am.",
+      "body": [
+        "CBSE has released the date sheet for the Class X and Class XII Board Examinations, 2027. All papers start at 10:30 am. Read the instructions given on the admit card.",
+        "## Class X (16 February to 9 March 2027)",
+        "- Wed 17 Feb: Mathematics Standard (041) and Mathematics Basic (241)",
+        "- Mon 22 Feb: Science (086)",
+        "- Wed 24 Feb: Computer Applications (165), Information Technology (402), Artificial Intelligence (417)",
+        "- Fri 26 Feb: English Communicative (101) and English Language and Literature (184)",
+        "- Mon 1 Mar: Sanskrit (122) and Sanskrit Communicative (119)",
+        "- Wed 3 Mar: Hindi Course-A (002) and Hindi Course-B (085)",
+        "- Thu 4 Mar: Gujarati (010)",
+        "- Mon 8 Mar: Social Science (087)",
+        "## Class XII (16 February to 9 April 2027)",
+        "- Tue 16 Feb: Physics (042)",
+        "- Thu 18 Feb: Physical Education (048)",
+        "- Tue 23 Feb: Accountancy (055)",
+        "- Sat 27 Feb: Chemistry (043)",
+        "- Wed 3 Mar: Gujarati (110) and other languages",
+        "- Fri 5 Mar: English Core (301) and English Elective (001)",
+        "- Tue 9 Mar: Mathematics (041) and Applied Mathematics (241)",
+        "- Sat 13 Mar: Hindi Core (302) and Hindi Elective (002)",
+        "- Tue 16 Mar: Economics (030)",
+        "- Thu 25 Mar: Biology (044)",
+        "- Wed 31 Mar: Informatics Practices (065), Computer Science (083), Information Technology (802)",
+        "- Thu 1 Apr: Business Studies (054)",
+        "The list above covers the main Science and Commerce subjects and Gujarati. Some papers last 2 hours, most last 3. Check your own subjects in the full official date sheet, which lists every subject code. No communication devices are allowed inside the examination centre."
+      ],
+      "externalLink": "https://www.cbse.gov.in/cbsenew/documents/Datesheet_ClassX%20_XII_2027_Main_06112026.pdf",
+      "pinned": true,
+      "expiryDate": "2027-04-10",
+      "circularNo": "CBSE/Date Sheet/X-XII/2026-27",
+      "issuedBy": "CBSE, Controller of Examinations",
+      "forClasses": "Class X, Class XII"
+    },
+    {
+      "status": "published",
+      "title": "Subject-wise marks bifurcation for Class X and XII, Examination 2026-27",
+      "slug": "cbse-marks-bifurcation-2026-27",
+      "category": "cbse",
+      "date": "2026-11-06",
+      "summary": "How marks are split between theory, practical, project and internal assessment in every subject, with the duration of each theory paper.",
+      "body": [
+        "CBSE has published the scheme of marks for each subject in the 2026-27 board examinations.",
+        "In most Class X subjects (languages, Mathematics, Science, Social Science) the split is 80 marks for the 3-hour theory paper and 20 marks for internal assessment.",
+        "In Class XII, most academic subjects have 80 theory marks and 20 internal assessment or project marks. Physics, Chemistry, Biology, Computer Science, Informatics Practices, Physical Education, Geography, Psychology and Home Science have 70 theory marks and 30 practical marks.",
+        "Students should check their own subjects in the official circular."
+      ],
+      "externalLink": "https://www.cbse.gov.in/cbsenew/documents/Circular_Marks_Bifurcation_06112026%20-.pdf",
+      "pinned": false,
+      "expiryDate": "2027-04-10",
+      "circularNo": null,
+      "issuedBy": "CBSE",
+      "forClasses": "Class X, Class XII"
+    },
+    {
+      "status": "published",
+      "title": "Practical exams, projects and internal assessment 2026-27 (winter-bound schools)",
+      "slug": "cbse-practicals-winter-bound-2026-27",
+      "category": "cbse",
+      "date": "2026-11-05",
+      "summary": "This schedule (9 November to 19 December 2026) is only for winter-bound schools. For all other schools, practicals are scheduled from 1 January 2027.",
+      "body": [
+        "CBSE has fixed 9 November to 19 December 2026 for practical exams, project work and internal assessment in schools located in winter-bound areas.",
+        "This schedule does not apply to our school. As per the circular, practical exams for the 2026-27 session are scheduled from 1 January 2027 for all other affiliated schools, and CBSE will issue a separate circular for regular-session schools.",
+        "We will share our school's practical exam timetable once that circular is out."
+      ],
+      "externalLink": "https://www.cbse.gov.in/cbsenew/documents/Circular_Practical_Examination_Winter_Bound_05112026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-12-19",
+      "circularNo": "Coord/Winter Bound/Practical/2026-27",
+      "issuedBy": "CBSE, Controller of Examinations",
+      "forClasses": "Class X, Class XII"
+    },
+    {
+      "status": "check",
+      "note": "Not yet checked: cbseacademic.nic.in could not be opened when this was prepared. Open the circular link once; if it shows this circular, set status to \"published\".",
+      "title": "Celebration of six years of Nasha Mukt Bharat Abhiyaan (NMBA)",
+      "slug": "cbse-acad-75-2026-nmba",
+      "category": "cbse",
+      "date": "2026-11-04",
+      "summary": "CBSE asks schools to mark six years of the Nasha Mukt Bharat Abhiyaan, the national drug-free India campaign.",
+      "body": [
+        "CBSE has asked affiliated schools to observe six years of the Nasha Mukt Bharat Abhiyaan with awareness activities. See the official circular for details."
+      ],
+      "externalLink": "https://cbseacademic.nic.in/web_material/Circulars/2026/75_Circular_2026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-12-15",
+      "circularNo": "Acad-75/2026",
+      "issuedBy": "CBSE Academic Unit",
+      "forClasses": null
+    },
+    {
+      "status": "check",
+      "note": "Not yet checked: cbseacademic.nic.in could not be opened when this was prepared. Open the circular link once; if it shows this circular, set status to \"published\".",
+      "title": "Aryabhata Ganit Challenge 2026",
+      "slug": "cbse-acad-74-2026-aryabhata-ganit-challenge",
+      "category": "cbse",
+      "date": "2026-11-04",
+      "summary": "CBSE's mathematics challenge for students. Registration is through the CBSE portal.",
+      "body": [
+        "CBSE has announced the Aryabhata Ganit Challenge 2026. Eligibility, dates and the registration process are in the official circular.",
+        "Registration and details: [cbseacadit.nic.in/agc](https://cbseacadit.nic.in/agc/)"
+      ],
+      "externalLink": "https://cbseacademic.nic.in/web_material/Circulars/2026/74_Circular_2026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-12-31",
+      "circularNo": "Acad-74/2026",
+      "issuedBy": "CBSE Academic Unit",
+      "forClasses": null
+    },
+    {
+      "status": "check",
+      "note": "Not yet checked: cbseacademic.nic.in could not be opened when this was prepared. Open the circular link once; if it shows this circular, set status to \"published\".",
+      "title": "National Startup Awards 6.0: Student Innovator and Aspiring Entrepreneur Award",
+      "slug": "cbse-acad-73-2026-national-startup-awards",
+      "category": "cbse",
+      "date": "2026-11-04",
+      "summary": "CBSE invites students to take part in the National Startup Awards 6.0 student categories.",
+      "body": [
+        "Students with an innovation or business idea can take part in the Student Innovator and Aspiring Entrepreneur Award categories. See the official circular for eligibility and dates."
+      ],
+      "externalLink": "https://cbseacademic.nic.in/web_material/Circulars/2026/73_Circular_2026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-12-31",
+      "circularNo": "Acad-73/2026",
+      "issuedBy": "CBSE Academic Unit",
+      "forClasses": null
+    },
+    {
+      "status": "published",
+      "title": "Correction of LOC data 2026-27",
+      "slug": "cbse-loc-correction-2026-27",
+      "category": "cbse",
+      "date": "2026-11-02",
+      "summary": "CBSE gave schools from 2 to 7 November 2026 to correct the List of Candidates (LOC) data submitted for the 2027 board exams.",
+      "body": [
+        "The List of Candidates (LOC) is the registration data, such as name, date of birth and subjects, that the school submits to CBSE for every board candidate.",
+        "CBSE allowed schools to correct this data from 2 to 7 November 2026. No corrections are made after this window. Corrections are made by the school through the CBSE portal, not by parents directly.",
+        "CBSE asks parents to check that the student's name, date of birth and parents' names are correct and written in full, not in short form."
+      ],
+      "externalLink": "https://www.cbse.gov.in/cbsenew/documents/LOC_Correction_2026_27_02112026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-11-07",
+      "circularNo": "CBSE/Coord/LOC/Data Correction/2026",
+      "issuedBy": "CBSE",
+      "forClasses": "Class X, Class XII"
+    },
+    {
+      "status": "check",
+      "note": "Not yet checked: cbseacademic.nic.in could not be opened when this was prepared. Open the circular link once; if it shows this circular, set status to \"published\".",
+      "title": "CBSE Expression Series for the academic session 2026-27",
+      "slug": "cbse-acad-72-2026-expression-series",
+      "category": "cbse",
+      "date": "2026-11-02",
+      "summary": "CBSE's annual writing and expression competition for students for 2026-27.",
+      "body": [
+        "CBSE has announced the Expression Series for 2026-27. Topics, classes and submission dates are in the official circular."
+      ],
+      "externalLink": "https://cbseacademic.nic.in/web_material/Circulars/2026/72_Circular_2026.pdf",
+      "pinned": false,
+      "expiryDate": "2027-01-31",
+      "circularNo": "Acad-72/2026",
+      "issuedBy": "CBSE Academic Unit",
+      "forClasses": null
+    },
+    {
+      "status": "published",
+      "title": "Visit of students to the CBSE Experience Centre",
+      "slug": "cbse-experience-centre-visit",
+      "category": "cbse",
+      "date": "2026-10-30",
+      "summary": "CBSE's new Experience Centre in Dwarka, New Delhi is open to students of CBSE schools from 3 to 30 November 2026. Schools book the visits.",
+      "body": [
+        "CBSE has set up an Experience Centre at its office in Sector 23, Dwarka, New Delhi. Students can explore the history of education in India, new technologies, science, innovation and careers.",
+        "From 3 to 30 November 2026, visits are only for students of CBSE schools. Schools book a time slot online, and teachers accompany the students. Each slot takes up to 60 visitors."
+      ],
+      "externalLink": "https://www.cbse.gov.in/cbsenew/documents/Experience_Centre_Opening_Circular_30102026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-11-30",
+      "circularNo": "CBSE/ADMIN/2026",
+      "issuedBy": "CBSE, Secretary",
+      "forClasses": null
+    },
+    {
+      "status": "check",
+      "note": "Not yet checked: cbseacademic.nic.in could not be opened when this was prepared. Open the circular link once; if it shows this circular, set status to \"published\".",
+      "title": "Celebration of Janjatiya Gaurav Divas, 1 to 15 November 2026",
+      "slug": "cbse-acad-71-2026-janjatiya-gaurav-divas",
+      "category": "cbse",
+      "date": "2026-10-30",
+      "summary": "Schools are asked to celebrate Janjatiya Gaurav Divas from 1 to 15 November 2026.",
+      "body": [
+        "CBSE has asked schools to celebrate Janjatiya Gaurav Divas from 1 to 15 November 2026 to honour the contribution of tribal communities."
+      ],
+      "externalLink": "https://cbseacademic.nic.in/web_material/Circulars/2026/71_Circular_2026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-11-15",
+      "circularNo": "Acad-71/2026",
+      "issuedBy": "CBSE Academic Unit",
+      "forClasses": null
+    },
+    {
+      "status": "published",
+      "title": "Scheme of Studies for Class IX 2026-27",
+      "slug": "cbse-acad-70-2026-scheme-class-9",
+      "category": "cbse",
+      "date": "2026-10-29",
+      "summary": "CBSE's circular on the Scheme of Studies for Class IX for the 2026-27 session.",
+      "body": [
+        "CBSE has issued a circular on the Scheme of Studies for Class IX for 2026-27. Parents of Class IX students should read the official circular."
+      ],
+      "externalLink": "https://cbseacademic.nic.in/web_material/Circulars/2026/70_Circular_2026.pdf",
+      "pinned": false,
+      "expiryDate": "2027-03-31",
+      "circularNo": "Acad-70/2026",
+      "issuedBy": "CBSE Academic Unit",
+      "forClasses": "Class IX"
+    },
+    {
+      "status": "check",
+      "note": "Not yet checked: cbseacademic.nic.in could not be opened when this was prepared. Open the circular link once; if it shows this circular, set status to \"published\".",
+      "title": "CBSE Science Exhibition 2026-27",
+      "slug": "cbse-acad-69-2026-science-exhibition",
+      "category": "cbse",
+      "date": "2026-10-27",
+      "summary": "CBSE has opened applications for the Science Exhibition 2026-27.",
+      "body": [
+        "CBSE has announced the Science Exhibition 2026-27. Schools apply through the CBSE portal. Theme, levels and dates are in the official circular.",
+        "Registration and details: [academic.cbseit.in/science_ex](https://academic.cbseit.in/science_ex)"
+      ],
+      "externalLink": "https://cbseacademic.nic.in/web_material/Circulars/2026/69_Circular_2026.pdf",
+      "pinned": false,
+      "expiryDate": "2027-01-31",
+      "circularNo": "Acad-69/2026",
+      "issuedBy": "CBSE Academic Unit",
+      "forClasses": null
+    },
+    {
+      "status": "check",
+      "note": "Not yet checked: cbseacademic.nic.in could not be opened when this was prepared. Open the circular link once; if it shows this circular, set status to \"published\".",
+      "title": "Observance of Vigilance Awareness Week 2026 in schools",
+      "slug": "cbse-acad-68-2026-vigilance-awareness-week",
+      "category": "cbse",
+      "date": "2026-10-26",
+      "summary": "CBSE asks schools to observe Vigilance Awareness Week 2026.",
+      "body": [
+        "CBSE has asked schools to observe Vigilance Awareness Week 2026 with activities on integrity and honesty."
+      ],
+      "externalLink": "https://cbseacademic.nic.in/web_material/Circulars/2026/68_Circular_2026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-11-05",
+      "circularNo": "Acad-68/2026",
+      "issuedBy": "CBSE Academic Unit",
+      "forClasses": null
+    },
+    {
+      "status": "published",
+      "title": "CBSE Science Challenge 2026-27",
+      "slug": "cbse-acad-67-2026-science-challenge",
+      "category": "cbse",
+      "date": "2026-10-13",
+      "summary": "Round 1 is held in schools from 2 to 13 November 2026. Six students per school (two each from Classes VIII, IX and X) go to Round 2.",
+      "body": [
+        "- Round 1, at school level: 2 to 13 November 2026. CBSE supplies an MCQ paper to registered schools.",
+        "- Registration for Round 2: 17 to 25 November 2026. Each school picks 6 students, 2 each from Classes VIII to X, based on Round 1 performance.",
+        "- Round 2, computer-based, conducted by CBSE: tentatively 30 November to 4 December 2026."
+      ],
+      "externalLink": "https://cbseacademic.nic.in/web_material/Circulars/2026/67_Circular_2026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-12-05",
+      "circularNo": "Acad-67/2026",
+      "issuedBy": "CBSE Academic Unit",
+      "forClasses": "Classes VIII to X"
+    },
+    {
+      "status": "published",
+      "title": "Submission of examination forms by private candidates, Class X and XII 2026-27",
+      "slug": "cbse-private-candidates-2026-27",
+      "category": "cbse",
+      "date": "2026-10-07",
+      "summary": "Separate circulars for private candidates appearing in the Class X and Class XII examinations 2026-27.",
+      "body": [
+        "CBSE has issued the process for private candidates to submit examination forms for the 2026-27 board exams. Online forms opened on 8 October 2026.",
+        "This applies to students who must repeat, students placed in compartment, and passed-out students who want to improve their performance.",
+        "Class XII: [read the Class XII circular](https://www.cbse.gov.in/cbsenew/documents/SUBMISSION_FORMS_PRIVATE_XII_2627_07102026.pdf)."
+      ],
+      "externalLink": "https://www.cbse.gov.in/cbsenew/documents/SUBMISSION_FORMS_PRIVATE_X_2627_07102026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-11-01",
+      "circularNo": "CBSE/COORD/PRIVATE-X/2026-27",
+      "issuedBy": "CBSE",
+      "forClasses": "Class X, Class XII"
+    },
+    {
+      "status": "published",
+      "title": "Submission of List of Candidates (LOC) for Class X and XII Main Examinations 2026-27",
+      "slug": "cbse-loc-submission-2026-27",
+      "category": "cbse",
+      "date": "2026-09-17",
+      "summary": "CBSE's instructions to schools for registering board candidates for the 2027 examinations.",
+      "body": [
+        "CBSE's instructions to schools for submitting the List of Candidates for the Class X and Class XII Main Examinations 2026-27."
+      ],
+      "externalLink": "https://www.cbse.gov.in/cbsenew/documents/LOC_2627_21092026.pdf",
+      "pinned": false,
+      "expiryDate": "2026-10-31",
+      "circularNo": "CBSE/LOC/X-XII/2026-2027",
+      "issuedBy": "CBSE",
+      "forClasses": "Class X, Class XII"
+    }
+  ]
+}
