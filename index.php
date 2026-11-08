@@ -42,9 +42,9 @@ $previewNotes = array_values(array_filter([
         </div>
       </div>
       <div class="hero__collage" aria-label="Photos from school">
-        <?= taped_photo('school building', 'Our campus on Godhra Road', null, 'hero__photo hero__photo--main') ?>
-        <?= taped_photo('classroom', 'In class', null, 'hero__photo hero__photo--a') ?>
-        <?= taped_photo('play area', 'Play time', null, 'hero__photo hero__photo--b') ?>
+        <?= taped_photo('', 'Our campus', photo('campus/building', ['loading' => 'eager', 'sizes' => '(min-width: 960px) 30vw, 62vw']), 'hero__photo hero__photo--main') ?>
+        <?= taped_photo('', 'Raksha Bandhan', photo('events/rakhi-exchange', ['sizes' => '(min-width: 960px) 16vw, 34vw']), 'hero__photo hero__photo--a') ?>
+        <?= taped_photo('', 'On the ground', photo('campus/sports-ground', ['sizes' => '(min-width: 960px) 18vw, 40vw']), 'hero__photo hero__photo--b') ?>
         <?= doodle('sun', 'hero__doodle hero__doodle--sun') ?>
         <?= doodle('star', 'hero__doodle hero__doodle--star') ?>
         <?= doodle('abc', 'hero__doodle hero__doodle--abc') ?>
@@ -146,7 +146,7 @@ $previewNotes = array_values(array_filter([
           <div class="facts__row" role="listitem"><span class="facts__big">English</span><span class="facts__label">Medium of teaching</span></div>
           <p class="facts__foot">Co-educational · <?= e(cfg('trust')) ?></p>
         </div>
-        <?= taped_photo('students in the library', 'Library time', null, 'about-strip__photo') ?>
+        <?= taped_photo('', 'Our library', photo('campus/library', ['sizes' => '(min-width: 860px) 420px, 90vw']), 'about-strip__photo') ?>
       </div>
       <!-- Public-listing figures: shown only once the school confirms them (inc/config.php > stats_confirmed). -->
       <dl class="stats" data-confirmed="<?= cfg('stats_confirmed') ? 'true' : 'false' ?>"<?= cfg('stats_confirmed') ? '' : ' hidden' ?>>
@@ -229,7 +229,7 @@ $previewNotes = array_values(array_filter([
         <p class="eyebrow">Admissions</p>
         <h2 id="steps-title"><span class="line">Admission</span> <span class="line">in <span data-annotate="circle" data-annotate-color="accent-4">3 steps</span></span></h2>
         <p class="lead">Simple and friendly. Our office will guide you at every step.</p>
-        <?= taped_photo('school reception', 'Our office will help you', null, 'steps__photo') ?>
+        <?= taped_photo('', 'Come and see the campus', photo('campus/building-front', ['sizes' => '(min-width: 900px) 460px, 90vw']), 'steps__photo') ?>
       </div>
       <?php require ROOT . '/partials/steps.php'; ?>
     </div>
@@ -246,7 +246,7 @@ $previewNotes = array_values(array_filter([
   <!-- 10. Facilities -->
   <section class="section facilities-strip" aria-labelledby="facilities-title">
     <div class="container facilities-strip__grid">
-      <?= taped_photo('computer lab', 'One of our two computer labs', null, 'facilities-strip__photo') ?>
+      <?= taped_photo('', 'One of our two computer labs', photo('campus/computer-lab', ['sizes' => '(min-width: 900px) 520px, 90vw']), 'facilities-strip__photo') ?>
       <div>
         <p class="eyebrow">Facilities</p>
         <h2 id="facilities-title"><span class="line">Room to learn</span> <span class="line">and <span class="hl">play</span></span></h2>
@@ -292,12 +292,9 @@ $previewNotes = array_values(array_filter([
         </div>
       </div>
       <a class="gallery-strip" href="/gallery/"><span class="visually-hidden">See the gallery: </span>
-        <?= taped_photo('annual day') ?>
-        <?= taped_photo('sports day') ?>
-        <?= taped_photo('science exhibition') ?>
-        <?= taped_photo('art and craft') ?>
-        <?= taped_photo('festival celebration') ?>
-        <?= taped_photo('library') ?>
+<?php foreach (['events/rakhi-making', 'events/junoon-chefs', 'life/assembly', 'events/junoon-presenting', 'life/pre-primary-lunch', 'events/junoon-group-1'] as $g): ?>
+        <?= taped_photo('', '', photo($g, ['sizes' => '(min-width: 900px) 200px, 45vw'])) ?>
+<?php endforeach; ?>
       </a>
     </div>
   </section>

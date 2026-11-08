@@ -12,7 +12,7 @@
   <li class="why__item">
     <?= doodle('sun', 'why__icon') ?>
     <h3>Safe campus and transport</h3>
-    <p>A caring campus on Godhra Road. <span class="placeholder">[TRANSPORT DETAILS TO CONFIRM]</span></p>
+    <p>A caring campus on Godhra Road, and school buses for students. <span class="placeholder">[BUS ROUTES TO CONFIRM]</span></p>
   </li>
   <li class="why__item">
     <?= doodle('bat', 'why__icon') ?>

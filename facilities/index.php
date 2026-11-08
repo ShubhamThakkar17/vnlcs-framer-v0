@@ -11,23 +11,23 @@ $page = [
 require ROOT . '/partials/head.php';
 
 $facilities = [
-    ['Library', 'Books for every age, and a quiet place to read.', 'library', 'abc'],
+    // [name, text, placeholder label, doodle, photo key or null]
+    ['Library', 'Books for every age, and a quiet place to read.', 'library', 'abc', 'campus/library'],
     ['AV room', 'Audio-visual lessons, talks and screenings.', 'AV room', 'sun'],
     ['Air-conditioned classrooms', 'Comfortable classrooms through Gujarat summers.', 'classroom', 'star'],
-    ['Two computer labs', 'Computer lessons for every class.', 'computer lab', 'sum'],
-    ['Physics lab', 'Experiments that make ideas real.', 'Physics lab', 'globe'],
-    ['Chemistry lab', 'Safe, supervised practical work.', 'Chemistry lab', 'beaker'],
-    ['Biology lab', 'Specimens, models and microscopes.', 'Biology lab', 'beaker'],
+    ['Two computer labs', 'Computer lessons for every class.', 'computer lab', 'sum', 'campus/computer-lab'],
+    ['Science labs', 'Physics, Chemistry and Biology labs for safe, supervised practical work.', 'science lab', 'beaker', 'campus/science-lab'],
     ['Maths lab', 'Shapes, patterns and hands-on maths.', 'Maths lab', 'sum'],
     ['Fine Arts lab', 'Drawing, painting and craft.', 'Fine Arts lab', 'star'],
     ['Activity room', 'Music, dance and group activities.', 'activity room', 'sun'],
     ['Play area', 'With a splash pool and sandpit for the little ones.', 'play area with splash pool and sandpit', 'bat'],
+    ['Sports ground', 'Open ground for volleyball, games and morning exercises.', 'sports ground', 'bat', 'campus/sports-ground'],
+    ['School buses', 'School buses for students. Routes and timings: [TO CONFIRM]', 'school buses', 'arrow', 'campus/school-buses'],
 ];
 // Shown only once the school confirms them.
 $unconfirmed = [
     ['Hostel', '[HOSTEL / BOARDING DETAILS]'],
     ['Swimming pool', '[SWIMMING POOL DETAILS]'],
-    ['Transport', '[TRANSPORT ROUTES AND CONTACT]'],
 ];
 ?>
 <main id="main">
@@ -39,9 +39,9 @@ $unconfirmed = [
     <div class="container">
       <h2 id="fac-title" class="visually-hidden">Our facilities</h2>
       <ul class="facility-grid" role="list">
-<?php foreach ($facilities as $i => [$name, $text, $photo, $d]): ?>
+<?php foreach ($facilities as $i => $f): [$name, $text, $label, $d] = $f; $key = $f[4] ?? null; ?>
         <li class="facility">
-          <?= taped_photo($photo, '', null, 'facility__photo') ?>
+          <?= taped_photo($label, '', $key ? photo($key, ['sizes' => '(min-width: 1200px) 400px, (min-width: 640px) 45vw, 90vw']) : null, 'facility__photo') ?>
           <div class="facility__text">
             <h3><?= doodle($d, 'facility__icon') ?><?= e($name) ?></h3>
             <p><?= e($text) ?></p>

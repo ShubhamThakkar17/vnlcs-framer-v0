@@ -22,8 +22,10 @@ function block(selectorRe) {
 
 const themes = {
   blackboard: block(':root,\\s*\\[data-theme="blackboard"\\]'),
-  whiteboard: block('\\[data-theme="whiteboard"\\]'),
 };
+// The Whiteboard theme is commented out in tokens.css (Blackboard only, Nov 2026).
+// It is checked again automatically if its block is restored.
+if (/\[data-theme="whiteboard"\]\s*\{/.test(css)) themes.whiteboard = block('\\[data-theme="whiteboard"\\]');
 
 function parse(c) {
   c = c.trim();
@@ -113,5 +115,5 @@ for (const [name, t] of Object.entries(themes)) {
   }
 }
 
-console.log(failures ? `\n${failures} pair(s) fail WCAG AA.` : '\nAll pairs pass WCAG AA in both themes.');
+console.log(failures ? `\n${failures} pair(s) fail WCAG AA.` : `\nAll pairs pass WCAG AA (${Object.keys(themes).join(', ')}).`);
 process.exit(failures ? 1 : 0);

@@ -55,7 +55,8 @@
 .brand__name { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.35rem, 1.1rem + .8vw, 1.75rem); color: var(--accent-1); }
 .brand__place { font-size: .95rem; color: var(--ink-muted); }
 
-/* ---------- Theme toggle: a tiny board ---------- */
+/* ---------- Theme toggle: a tiny board ----------
+   Not rendered while the Whiteboard theme is commented out (Blackboard only, Nov 2026). Kept for later. */
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -798,3 +799,15 @@ main > .section:last-child { padding-bottom: var(--space-section); }
 /* Scroll containers must be positioned, or absolutely positioned children (e.g. .visually-hidden
    text) escape the clipping and widen the page on phones. */
 .reels, .table-wrap, .jump ul, .gallery-strip, .strip { position: relative; }
+
+/* ---------- Real photos inside taped frames (Nov 2026) ---------- */
+.photo picture { display: block; }
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--ratio, auto);
+  object-fit: cover;
+  object-position: var(--focus, 50% 40%);
+  background: #2A3530;
+}

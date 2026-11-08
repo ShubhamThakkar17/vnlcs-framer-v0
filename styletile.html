@@ -6,8 +6,9 @@
   <title>Style tile · Veer New Look Central School, Halol</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#1E2B25">
+<!-- WHITEBOARD THEME COMMENTED OUT (Blackboard only, Nov 2026)
   <script>
-    /* Set the theme before first paint so there is no flash. Default: Blackboard. */
+    ( Set the theme before first paint so there is no flash. Default: Blackboard. )
     (function () {
       var t = null;
       try { t = localStorage.getItem('vnl-theme'); } catch (e) {}
@@ -16,6 +17,7 @@
       if (theme === 'whiteboard') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#FAFAF7');
     })();
   </script>
+-->
   <link rel="preload" href="assets/fonts/cabin-sketch-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kalam-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -83,11 +85,13 @@
         <span class="brand__name">Veer New Look</span>
         <span class="brand__place">Central School, Halol</span>
       </a>
+      <!-- WHITEBOARD THEME COMMENTED OUT (Blackboard only)
       <div class="theme-toggle" role="group" aria-label="Board style">
         <button type="button" data-theme-set="blackboard" aria-pressed="true">Blackboard</button>
         <span class="theme-toggle__sep" aria-hidden="true">/</span>
         <button type="button" data-theme-set="whiteboard" aria-pressed="false">Whiteboard</button>
       </div>
+      -->
     </div>
   </div>
   </header>
@@ -97,7 +101,7 @@
       <div class="container">
         <p class="eyebrow">Phase 1 · Style tile</p>
         <h1><span class="line">Play,</span> <span class="line">Learn &amp;</span> <span class="line"><span data-annotate="underline" data-annotate-color="accent-2">Grow Together</span></span></h1>
-        <p class="lead" style="margin-top:1.25rem">Every building block of the site in one place. Use the little board in the header to switch between Blackboard and Whiteboard. All sample text in square brackets is placeholder.</p>
+        <p class="lead" style="margin-top:1.25rem">Every building block of the site in one place. All sample text in square brackets is placeholder.</p>
       </div>
     </section>
 
@@ -354,7 +358,7 @@
       document.addEventListener('themechange', paint);
     })();
   </script>
-  <script src="assets/js/theme.js" defer></script>
+  <!-- WHITEBOARD THEME COMMENTED OUT: <script src="assets/js/theme.js" defer></script> -->
   <script src="assets/js/vendor/rough-notation.js" defer></script>
   <script src="assets/js/chalk.js" defer></script>
   <script src="assets/js/marquee.js" defer></script>

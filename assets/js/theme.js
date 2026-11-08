@@ -1,3 +1,5 @@
+/* NOT LOADED: the Whiteboard theme is commented out (Blackboard only, Nov 2026).
+   Kept for later. Re-enable in partials/footer.php, partials/header.php and partials/head.php. */
 /* Theme toggle: Blackboard / Whiteboard.
    The inline <head> script has already set data-theme before first paint;
    this file only wires up the buttons and remembers the choice. */

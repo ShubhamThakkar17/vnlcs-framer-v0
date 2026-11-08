@@ -78,9 +78,14 @@ body::before {
 [data-theme="blackboard"], :root {
   --board-ghosts: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1100' height='900' fill='none' stroke='%23F3F0E8' stroke-linecap='round'%3E%3Cpath d='M-40 160c180-60 360-70 560-20s420 40 620-30' stroke-width='90' stroke-opacity='.022'/%3E%3Cpath d='M120 620c160-40 300-30 460 10s300 20 420-20' stroke-width='70' stroke-opacity='.018'/%3E%3Cpath d='M700 400c60-50 160-60 260-30' stroke-width='50' stroke-opacity='.02'/%3E%3C/svg%3E");
 }
+/* ==== WHITEBOARD THEME: COMMENTED OUT (client chose Blackboard only, Nov 2026). ====
+   Faint ghosted-marker background for the Whiteboard theme. Restore together with tokens.css.
+   Inner notes are in (brackets) because CSS comments cannot nest.
+
 [data-theme="whiteboard"] {
   --board-ghosts: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1100' height='900' fill='none' stroke='%231F2937' stroke-linecap='round'%3E%3Cpath d='M80 140c60-30 120 10 180-20s110-10 170 15' stroke-width='5' stroke-opacity='.035'/%3E%3Cpath d='M640 260c40 20 90-30 140-5s80 30 130 0' stroke-width='4' stroke-opacity='.03'/%3E%3Cpath d='M180 600l60-70 50 60 40-40' stroke-width='5' stroke-opacity='.028'/%3E%3Cpath d='M760 700c30-40 90-40 120 0s90 30 120-10' stroke-width='4' stroke-opacity='.03'/%3E%3Cpath d='M-20 420c200-30 420-25 640 0' stroke-width='60' stroke-opacity='.018'/%3E%3C/svg%3E");
 }
+==== END WHITEBOARD THEME ==== */
 
 /* ---------- Typography ---------- */
 h1, h2, .h1, .h2 {

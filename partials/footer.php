@@ -79,7 +79,9 @@ $year = date('Y');
 
   <div class="wipe" aria-hidden="true"><span class="wipe__duster"></span></div>
 
+<?php /* WHITEBOARD THEME COMMENTED OUT (Blackboard only): theme.js powers the Blackboard / Whiteboard toggle.
   <script src="<?= asset('js/theme.js') ?>" defer></script>
+*/ ?>
   <script src="<?= asset('js/vendor/rough-notation.js') ?>" defer></script>
   <script src="<?= asset('js/chalk.js') ?>" defer></script>
   <script src="<?= asset('js/marquee.js') ?>" defer></script>

@@ -43,23 +43,28 @@
   --line-filter: url(#chalk-line);
 }
 
+/* ==== WHITEBOARD THEME: COMMENTED OUT (client chose Blackboard only, Nov 2026). ====
+   To restore: remove this comment wrapper, turn the (bracketed) notes back into CSS comments,
+   and re-enable the toggle in partials/header.php, the theme script in partials/head.php and theme.js in partials/footer.php.
+   Inner notes are in (brackets) because CSS comments cannot nest.
+
 [data-theme="whiteboard"] {
   color-scheme: light;
 
   --board: #FAFAF7;
   --board-deep: #EEF0F0;
-  --frame: #B8BCC2;          /* aluminium */
+  --frame: #B8BCC2;          (aluminium)
   --frame-light: #D6D9DD;
   --frame-dark: #8E939A;
   --frame-ink: #1F2937;
 
-  /* Dry-erase marker */
-  --ink: #1F2937;            /* marker black */
+  (Dry-erase marker)
+  --ink: #1F2937;            (marker black)
   --ink-muted: #4B5563;
-  --accent-1: #1D4ED8;       /* marker blue */
-  --accent-2: #C62828;       /* marker red */
-  --accent-3: #23652A;       /* marker green (darkened from #2E7D32 for AA on card fills) */
-  --accent-4: #B03C0A;       /* marker orange (darkened from #EA580C for AA on card fills) */
+  --accent-1: #1D4ED8;       (marker blue)
+  --accent-2: #C62828;       (marker red)
+  --accent-3: #23652A;       (marker green (darkened from #2E7D32 for AA on card fills))
+  --accent-4: #B03C0A;       (marker orange (darkened from #EA580C for AA on card fills))
   --on-accent: #FFFFFF;
 
   --smudge: rgba(31, 41, 55, .06);
@@ -68,7 +73,7 @@
   --focus: #1D4ED8;
   --focus-paper: #1D4ED8;
 
-  --paper: #FFF4BF;          /* sticky-note yellow, so it reads on white */
+  --paper: #FFF4BF;          (sticky-note yellow, so it reads on white)
   --paper-ink: #1F2937;
   --paper-muted: #4B5563;
   --paper-accent: #A61B1B;
@@ -78,6 +83,7 @@
   --heading-filter: none;
   --line-filter: none;
 }
+==== END WHITEBOARD THEME ==== */
 
 :root {
   /* Type */

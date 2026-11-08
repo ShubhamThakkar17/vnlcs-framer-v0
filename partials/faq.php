@@ -7,7 +7,7 @@ $faqs = [
     ['How do we apply?', 'Fill in the <a href="/admissions/#enquire">enquiry form</a>, call the office or send us a WhatsApp message. We will guide you through the next steps.'],
     ['What is the age for Nursery admission?', '<span class="placeholder">[AGE CRITERIA FOR EACH CLASS TO CONFIRM]</span>'],
     ['Can we visit the campus first?', 'Yes, please do. Book a visit through the <a href="/admissions/?visit=1#enquire">enquiry form</a> or call the office. <span class="placeholder">[OFFICE HOURS]</span>'],
-    ['Is school transport available?', '<span class="placeholder">[TRANSPORT DETAILS TO CONFIRM]</span>'],
+    ['Is school transport available?', 'Yes, the school has buses for students. <span class="placeholder">[ROUTES, TIMINGS AND FEES TO CONFIRM]</span>'],
 ];
 ?>
 <div class="faq__list">

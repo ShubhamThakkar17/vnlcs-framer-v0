@@ -85,12 +85,15 @@ require ROOT . '/partials/head.php';
   <section class="section-tight" aria-labelledby="history-title" id="history">
     <div class="container">
       <?= section_heading('Since 2005', ['Our', '<span class="hl">journey</span>'], 'history-title') ?>
+      <div class="split split--top">
       <ol class="timeline" role="list">
         <li><span class="timeline__year">2005</span><p>Veer New Look Central School opens on Godhra Road, Halol.</p></li>
         <li><span class="timeline__year">[YEAR]</span><p><span class="placeholder">[MILESTONE, e.g. CBSE affiliation or a new building]</span></p></li>
         <li><span class="timeline__year">[YEAR]</span><p><span class="placeholder">[MILESTONE]</span></p></li>
         <li><span class="timeline__year">Today</span><p>Classes from Nursery to Class 12, with Science and Commerce in the senior years. <span class="placeholder">[TO CONFIRM]</span></p></li>
       </ol>
+      <?= taped_photo('', 'Our school building', photo('campus/building', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
+      </div>
     </div>
   </section>
 
@@ -121,6 +124,10 @@ require ROOT . '/partials/head.php';
   <section class="section" aria-labelledby="staff-title" id="staff">
     <div class="container">
       <?= section_heading('Our teachers', ['Staff', '<span class="hl">by role</span>'], 'staff-title') ?>
+      <div class="staff-photos">
+        <?= taped_photo('', 'Our teachers at Business Junoon 2.0', photo('life/teachers', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
+        <?= taped_photo('', 'All smiles at Business Junoon 2.0', photo('life/teachers-2', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
+      </div>
       <p class="muted">Teacher names and qualifications will be listed here once the school shares them.</p>
       <div class="table-wrap" tabindex="0" role="region" aria-label="Teaching and support staff by role (table)">
         <table class="data-table">

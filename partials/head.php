@@ -29,14 +29,15 @@ $robots = $page['robots'] ?? 'index, follow';
   <link rel="canonical" href="<?= e($canonical) ?>">
   <meta name="theme-color" content="#1E2B25">
   <script>
-    /* Set the board before first paint so there is no flash. First visit: Blackboard. */
     (function () {
+      /* WHITEBOARD THEME COMMENTED OUT (Blackboard only, Nov 2026). This read the visitor's saved board before first paint:
       var t = null;
       try { t = localStorage.getItem('vnl-theme'); } catch (e) {}
       if (t === 'whiteboard') {
         document.documentElement.setAttribute('data-theme', 'whiteboard');
         document.querySelector('meta[name="theme-color"]').setAttribute('content', '#FAFAF7');
       }
+      */
       document.documentElement.className += ' js';
     })();
   </script>

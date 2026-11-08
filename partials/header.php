@@ -38,7 +38,7 @@ $settings = site_settings();
           <li><a href="<?= e(cfg('youtube')) ?>" rel="noopener"><?= icon('youtube') ?><span class="visually-hidden">YouTube</span></a></li>
 <?php endif; ?>
         </ul>
-        <?= theme_toggle('theme-toggle--strip') ?>
+        <?php /* WHITEBOARD THEME COMMENTED OUT (Blackboard only): echo theme_toggle('theme-toggle--strip'); */ ?>
       </div>
     </div>
 
@@ -62,7 +62,7 @@ $settings = site_settings();
         </nav>
 
         <div class="site-header__tools">
-          <?= theme_toggle('theme-toggle--header') ?>
+          <?php /* WHITEBOARD THEME COMMENTED OUT (Blackboard only): echo theme_toggle('theme-toggle--header'); */ ?>
           <button type="button" class="menu-btn" aria-controls="site-nav" aria-expanded="false">
             <?= icon('menu', 'icon menu-btn__open') ?><?= icon('close', 'icon menu-btn__close') ?>
             <span class="menu-btn__label">Menu</span>

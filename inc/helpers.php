@@ -202,7 +202,8 @@ function taped_photo(string $label, string $caption = '', ?array $img = null, st
 {
     $html = '<figure class="photo ' . e($class) . '">';
     if ($img) {
-        $html .= picture($img['src'], $img['alt'], (int) $img['w'], (int) $img['h'], $img['loading'] ?? 'lazy');
+        $html .= picture($img['src'], $img['alt'], (int) $img['w'], (int) $img['h'], $img['loading'] ?? 'lazy',
+            $img['sizes'] ?? '(min-width: 900px) 50vw, 100vw', !empty($img['priority']));
     } else {
         $html .= '<div class="photo__placeholder"><span>[PHOTO: ' . e($label) . ']</span></div>';
     }
@@ -217,7 +218,7 @@ function taped_photo(string $label, string $caption = '', ?array $img = null, st
  * $src is the base name in /assets/img/ without extension, e.g. "campus/library".
  * Expects {base}-{w}.avif / .webp / .jpg at widths 480, 960, 1440.
  */
-function picture(string $src, string $alt, int $w, int $h, string $loading = 'lazy', string $sizes = '(min-width: 900px) 50vw, 100vw'): string
+function picture(string $src, string $alt, int $w, int $h, string $loading = 'lazy', string $sizes = '(min-width: 900px) 50vw, 100vw', bool $priority = false): string
 {
     $widths = [480, 960, 1440];
     $set = function (string $ext) use ($src, $widths): string {
@@ -237,7 +238,8 @@ function picture(string $src, string $alt, int $w, int $h, string $loading = 'la
     }
     $fallback = "/assets/img/{$src}-960.jpg";
     $html .= '<img src="' . e($fallback) . '" srcset="' . e($set('jpg')) . '" sizes="' . e($sizes) . '" alt="' . e($alt)
-        . '" width="' . $w . '" height="' . $h . '" loading="' . e($loading) . '" decoding="async">';
+        . '" width="' . $w . '" height="' . $h . '" loading="' . e($loading) . '" decoding="async"'
+        . ($priority ? ' fetchpriority="high"' : '') . '>';
     return $html . '</picture>';
 }
 
@@ -255,7 +257,7 @@ function section_heading(string $eyebrow, array $lines, string $id, string $extr
     return $h . '</h2></div></div>';
 }
 
-/** The tiny-board theme toggle. Rendered twice (top strip on phones, header on wider screens); CSS shows one. */
+/** Not used while the Whiteboard theme is commented out (Blackboard only). The tiny-board theme toggle. Rendered twice (top strip on phones, header on wider screens); CSS shows one. */
 function theme_toggle(string $class = ''): string
 {
     return '<div class="theme-toggle ' . e($class) . '" role="group" aria-label="Board style">'
@@ -299,4 +301,20 @@ function portrait_card(string $role, string $name, string $note = ''): string
     return '<li class="portrait"><div class="portrait__frame"><span>[PHOTO: ' . e($role) . ']</span></div>'
         . '<h3>' . e($name) . '</h3><p class="portrait__role">' . e($role) . '</p>'
         . ($note !== '' ? '<p class="muted small">' . $note . '</p>' : '') . '</li>';
+}
+
+/**
+ * A school photo from inc/photos.php, ready for taped_photo():
+ *   taped_photo('', 'Library time', photo('campus/library'))
+ * $opts: 'loading' => 'eager', 'priority' => true (LCP image), 'sizes' => '...'
+ */
+function photo(string $key, array $opts = []): ?array
+{
+    static $all = null;
+    $all = $all ?? (require ROOT . '/inc/photos.php');
+    if (!isset($all[$key])) {
+        return null;
+    }
+    [$alt, $w, $h] = $all[$key];
+    return array_merge(['src' => $key, 'alt' => $alt, 'w' => $w, 'h' => $h], $opts);
 }

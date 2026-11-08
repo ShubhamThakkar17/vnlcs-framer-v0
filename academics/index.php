@@ -34,10 +34,13 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
   <!-- Pre-primary: the playful stage -->
   <section class="section-tight stage-block stage-block--playful" aria-labelledby="pre-primary" id="pre-primary-section">
     <div class="container">
+      <div class="split split--top stage-intro">
       <div class="section-head">
         <p class="eyebrow">Nursery, LKG, UKG</p>
         <h2 id="pre-primary"><span class="line">Pre-primary:</span> <span class="line">learning <span data-annotate="circle" data-annotate-color="accent-2">through play</span></span></h2>
         <p>Little ones learn letters, numbers, colours and shapes through songs, stories, games and hands-on activities.</p>
+      </div>
+      <?= taped_photo('', 'Lunch time with friends', photo('life/pre-primary-lunch', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
       </div>
       <ul class="programmes" role="list">
         <li class="programme">
@@ -47,7 +50,6 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
             <p>First days at school: settling in, making friends, rhymes, colours and play.</p>
             <span class="pill pill--age">Age: [TO CONFIRM]</span>
           </div>
-          <?= taped_photo('Nursery class', '', null, 'programme__photo') ?>
         </li>
         <li class="programme">
           <span class="programme__num" aria-hidden="true">02</span>
@@ -56,7 +58,6 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
             <p>Phonics, early numbers, drawing and growing confidence.</p>
             <span class="pill pill--age">Age: [TO CONFIRM]</span>
           </div>
-          <?= taped_photo('LKG class', '', null, 'programme__photo') ?>
         </li>
         <li class="programme">
           <span class="programme__num" aria-hidden="true">03</span>
@@ -65,7 +66,6 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
             <p>Reading, writing and number readiness for Class 1.</p>
             <span class="pill pill--age">Age: [TO CONFIRM]</span>
           </div>
-          <?= taped_photo('UKG class', '', null, 'programme__photo') ?>
         </li>
       </ul>
 
@@ -87,7 +87,7 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
         <p class="lead">Strong basics in reading, writing and numbers, with environmental studies, languages, art and physical education.</p>
         <p><span class="placeholder">[SUBJECTS AND LANGUAGES OFFERED IN CLASSES 1 TO 5]</span></p>
       </div>
-      <?= taped_photo('primary classroom', 'A primary class') ?>
+      <?= taped_photo('', 'Raksha Bandhan in primary', photo('events/rakhi-primary', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
     </div>
   </section>
 
@@ -99,7 +99,7 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
         <p class="lead">More subjects, more projects and regular time in the labs and computer rooms.</p>
         <p><span class="placeholder">[SUBJECTS AND LANGUAGES OFFERED IN CLASSES 6 TO 8]</span></p>
       </div>
-      <?= taped_photo('students in a lab', 'Lab time') ?>
+      <?= taped_photo('', 'Our science lab', photo('campus/science-lab', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
     </div>
   </section>
 
@@ -111,16 +111,19 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
         <p class="lead">A focused two years leading to the CBSE Class 10 board examinations.</p>
         <p><span class="placeholder">[SUBJECTS OFFERED IN CLASSES 9 AND 10]</span></p>
       </div>
-      <?= taped_photo('Class 10 students', 'Secondary classes') ?>
+      <?= taped_photo('', 'Business Junoon: running our own stalls', photo('events/junoon-presenting', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
     </div>
   </section>
 
   <section class="section-tight stage-block stage-block--calm" aria-labelledby="senior-secondary" id="senior-secondary-section">
     <div class="container">
+      <div class="split split--top stage-intro">
       <div class="section-head">
         <p class="eyebrow">Classes 11 and 12</p>
         <h2 id="senior-secondary"><span class="line">Senior</span> <span class="line">Secondary</span></h2>
         <p>Students choose a stream for the CBSE Class 12 board examinations. <span class="placeholder">[STREAMS AND SUBJECT COMBINATIONS FOR THE NEXT SESSION TO CONFIRM]</span></p>
+      </div>
+      <?= taped_photo('', 'Senior students at break', photo('life/senior-students', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
       </div>
       <ul class="streams" role="list">
         <li class="card"><h3>Science (PCM)</h3><p>Physics, Chemistry and Mathematics.</p><p class="small"><span class="placeholder">[OPTIONAL SUBJECTS]</span></p></li>

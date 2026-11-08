@@ -29,6 +29,8 @@ Read `BRIEF.md` for the full spec. This file holds the rules and tokens that mus
 - **Deploy pack (Phase 7):** `tools/build-dist.sh` builds `dist/public_html/` + a zip with only live files (no Studio, tools, notes, styletile, router, secrets). Tested on Apache with `tools/test-htaccess.sh`.
 - **Tests:** see the table in README.md. Re-run contrast, axe, test-site, test-htaccess and Lighthouse after design or routing changes.
 - **Reels hidden for now (client request):** the home "Live from Instagram" section and the Gallery reels wall are wrapped in PHP block comments (no markup sent) and `reels.js` is not loaded. The cron scripts, `reels.js` and `render_reel()` are untouched; un-comment to restore. `tools/test-reels.js` will fail until then.
+- **Blackboard only (Nov 2026, client request):** the Whiteboard theme is commented out, not deleted: its token block in `tokens.css` and ghost background in `base.css` (inner notes turned into (brackets) because CSS comments cannot nest), the head script that read the saved theme, both `theme_toggle()` calls in `partials/header.php`, `theme.js` in `partials/footer.php`, and the toggle in `styletile.html`. Tools test Blackboard only (`tools/axe.js`, `tools/shots.js`; `tools/contrast.js` re-checks Whiteboard automatically if its block returns). To restore, undo those comments.
+- **School photos (Nov 2026):** originals go in `assets/img/src/` (gitignored), `tools/optimise-images.js` writes AVIF/WebP/JPEG at 480/960/1440. `inc/photos.php` lists every photo with its alt text; pages use `taped_photo('', 'Caption', photo('campus/library'))`. Alt texts and captions never name children. The Gallery shows three local albums (Business Junoon 2.0, Raksha Bandhan, Around the school); Sanity albums are listed below them once real ones exist (sample albums are hidden). The bus photo is taken as evidence that transport exists; routes, timings and fees stay placeholders.
 - **Fonts** are subset to Basic Latin + common punctuation + ₹ with `pyftsubset`.
 
 ## Client facts (do not alter)
@@ -49,7 +51,7 @@ Read `BRIEF.md` for the full spec. This file holds the rules and tokens that mus
 - Raw content lives in `/content/` (gitignored). Never fetch the old site at build time.
 
 ## Design system: the site is a school board
-Two themes, one component set. `data-theme="blackboard|whiteboard"` on `<html>`, set by an inline `<head>` script before first paint; choice in `localStorage` inside try/catch; first visit = Blackboard. Header toggle drawn as a tiny board labelled "Blackboard / Whiteboard".
+**Only Blackboard is live** (Whiteboard commented out, see Decisions log). Two themes, one component set. `data-theme="blackboard|whiteboard"` on `<html>`, set by an inline `<head>` script before first paint; choice in `localStorage` inside try/catch; first visit = Blackboard. Header toggle drawn as a tiny board labelled "Blackboard / Whiteboard".
 
 | Token | Blackboard | Whiteboard | Use |
 |---|---|---|---|

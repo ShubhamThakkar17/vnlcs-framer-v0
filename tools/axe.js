@@ -9,7 +9,7 @@ const pages = process.argv.slice(2);
 (async () => {
   const b = await chromium.launch();
   let total = 0;
-  for (const path of pages) for (const theme of ['blackboard', 'whiteboard']) for (const width of [375, 1440]) {
+  for (const path of pages) for (const theme of ['blackboard' /* , 'whiteboard' (theme commented out, Nov 2026) */]) for (const width of [375, 1440]) {
     const ctx = await b.newContext({ viewport: { width, height: 900 } });
     await ctx.addInitScript(t => { try { localStorage.setItem('vnl-theme', t); } catch (e) {} }, theme);
     const p = await ctx.newPage();
@@ -24,6 +24,6 @@ const pages = process.argv.slice(2);
     await ctx.close();
   }
   await b.close();
-  console.log(total ? `\n${total} violation group(s) found.` : `\naxe: 0 violations on ${pages.length} page(s), both themes, 375 and 1440 px.`);
+  console.log(total ? `\n${total} violation group(s) found.` : `\naxe: 0 violations on ${pages.length} page(s), Blackboard theme, 375 and 1440 px.`);
   process.exit(total ? 1 : 0);
 })();

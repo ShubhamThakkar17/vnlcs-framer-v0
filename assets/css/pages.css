@@ -494,3 +494,30 @@
 .share__wa { --btn-ink: var(--accent-4); }
 .notice-page__back { margin-top: 2rem; }
 .notice-page__back a { display: inline-flex; min-height: 44px; align-items: center; font-weight: 700; }
+
+/* ==========================================================================
+   School photos (Nov 2026)
+   ========================================================================== */
+.hero__photo--a { --focus: 50% 30%; }
+.stage-intro .photo, .split .photo { --ratio: 4 / 3; }
+.stage-intro { align-items: center; margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.5rem); }
+@media (min-width: 760px) { .programme { grid-template-columns: auto 1fr; } }
+.staff-photos { display: grid; gap: 2.5rem var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); margin: .5rem 0 2.5rem; }
+.staff-photos .photo { --ratio: 3 / 2; }
+.staff-photos .photo:nth-child(2) { --tilt: 1.8deg; }
+.facility__photo { --ratio: 4 / 3; }
+
+/* Gallery photo grids */
+.photo-grid { display: grid; gap: 2rem 1.5rem; grid-template-columns: repeat(auto-fill, minmax(min(45%, 240px), 1fr)); padding: 0; margin: 0; list-style: none; }
+.photo-grid .photo { --ratio: 4 / 3; padding: 7px; }
+.photo-grid li:nth-child(3n + 1) .photo { --tilt: -2deg; }
+.photo-grid li:nth-child(3n + 2) .photo { --tilt: 1.5deg; }
+.photo-grid li:nth-child(3n) .photo { --tilt: -.5deg; }
+.photo-grid__link { display: block; border-radius: 4px; }
+.photo-grid__link .photo { transition: transform .25s var(--ease); }
+.photo-grid__link:hover .photo, .photo-grid__link:focus-visible .photo { transform: rotate(0deg) scale(1.03); }
+.photo-album + .photo-album { border-top: 2px dashed var(--smudge); }
+@media (prefers-reduced-motion: reduce) { .photo-grid__link .photo { transition: none; } }
+/* Hero collage: captions sit on the edge that stays visible when photos overlap */
+.hero__photo figcaption { text-align: left; padding-left: .35rem; white-space: nowrap; }
+.hero__photo--b figcaption { text-align: right; padding-right: .35rem; }

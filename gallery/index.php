@@ -60,9 +60,52 @@ foreach ($albums as $a) {
   <?= page_hero('Gallery', ['Moments from', '<span class="hl">school life</span>'],
       'Events, celebrations and everyday learning. Photos are added by the school after each event.', $crumbs, 'star') ?>
 
+<?php
+// The school's own photos (inc/photos.php), grouped by event. Sanity albums appear below once staff add them.
+$localAlbums = [
+    ['Business Junoon 2.0', 'Our food festival: students plan, cook and run their own stalls.', 'junoon', [
+        'events/junoon-chefs', 'events/junoon-cooking-1', 'events/junoon-presenting', 'events/junoon-food-lab',
+        'events/junoon-cooking-2', 'events/junoon-stall-boys', 'events/junoon-stalls', 'events/junoon-group-1',
+        'events/junoon-group-2', 'events/junoon-group-3', 'life/teachers', 'life/teachers-2',
+    ]],
+    ['Raksha Bandhan', 'Rakhi making in class, and rakhis tied for friends.', 'rakhi', [
+        'events/rakhi-making', 'events/rakhi-primary', 'events/rakhi-exchange',
+    ]],
+    ['Around the school', 'Everyday life on our Godhra Road campus.', 'campus', [
+        'life/assembly', 'life/pre-primary-lunch', 'campus/computer-lab', 'campus/library', 'campus/science-lab',
+        'campus/sports-ground', 'life/senior-students', 'campus/building', 'campus/building-front', 'campus/school-buses',
+    ]],
+];
+$fullSize = function (string $key): string {
+    foreach ([1440, 960] as $w) {
+        if (is_file(ROOT . "/assets/img/{$key}-{$w}.jpg")) {
+            return "/assets/img/{$key}-{$w}.jpg";
+        }
+    }
+    return '#';
+};
+?>
+<?php foreach ($localAlbums as [$title, $intro, $id, $keys]): ?>
+  <section class="section-tight photo-album" aria-labelledby="album-<?= e($id) ?>">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><?= count($keys) ?> photos</p>
+        <h2 id="album-<?= e($id) ?>"><span class="line"><?= e($title) ?></span></h2>
+        <p><?= e($intro) ?></p>
+      </div>
+      <ul class="photo-grid" role="list">
+<?php foreach ($keys as $k): $ph = photo($k, ['sizes' => '(min-width: 1200px) 300px, (min-width: 640px) 30vw, 45vw']); if (!$ph) continue; ?>
+        <li><a href="<?= e($fullSize($k)) ?>" class="photo-grid__link"><?= taped_photo('', '', $ph) ?><span class="visually-hidden"> (open full size)</span></a></li>
+<?php endforeach; ?>
+      </ul>
+    </div>
+  </section>
+<?php endforeach; ?>
+
+<?php if ($albums && !content_is_sample()): ?>
   <section class="section-tight" aria-labelledby="albums-title">
     <div class="container">
-      <?= section_heading('Albums', ['Event', '<span class="hl">albums</span>'], 'albums-title') ?>
+      <?= section_heading('Albums', ['More', '<span class="hl">albums</span>'], 'albums-title') ?>
 <?php if ($albums): ?>
       <ul class="albums" role="list">
 <?php foreach ($albums as $a): ?>
@@ -84,6 +127,7 @@ foreach ($albums as $a) {
 <?php endif; ?>
     </div>
   </section>
+<?php endif; ?>
 
   <section class="section-tight" aria-labelledby="videos-title">
     <div class="container">

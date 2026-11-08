@@ -146,7 +146,7 @@ Cron expressions: hourly `7 * * * *`, daily `17 3 * * *`.
 
 ### 10. Go-live checks
 
-1. Open https://veernewlookschool.com in both themes on a phone. Try the menu, the Call bar and WhatsApp.
+1. Open https://veernewlookschool.com on a phone. Try the menu, the Call bar and WhatsApp.
 2. Submit a test enquiry and check **both** inboxes.
 3. Check the old addresses and private folders from your computer:
 
@@ -171,8 +171,8 @@ Cron expressions: hourly `7 * * * *`, daily `17 3 * * *`.
   cd tools && npm install && npm run images
   ```
 
-  It writes AVIF, WebP and JPEG copies at 480, 960 and 1440 px, removes location data, and prints the
-  `picture(...)` call to paste into `taped_photo()` in place of `null`.
+  It writes AVIF, WebP and JPEG copies at 480, 960 and 1440 px and removes location data. Then add the photo
+  with its alt text to `inc/photos.php` and use it on a page: `taped_photo('', 'Caption', photo('campus/library'))`.
 
 ## Local preview
 
@@ -195,16 +195,16 @@ Run them with the local server (or Apache) running. Most need Node with Playwrig
 
 | Command | Checks |
 |---|---|
-| `node tools/contrast.js` | WCAG AA contrast of every token pair in both themes |
-| `node tools/axe.js / /about/ ...` | axe accessibility: both themes, 375 and 1440 px (needs `axe-core`, in `tools/`) |
+| `node tools/contrast.js` | WCAG AA contrast of every token pair (Blackboard; Whiteboard too if it is restored) |
+| `node tools/axe.js / /about/ ...` | axe accessibility: 375 and 1440 px (needs `axe-core`, in `tools/`) |
 | `tools/lighthouse.sh [url]` | Lighthouse mobile for Home, Notice Board, Gallery |
-| `node tools/test-site.js [url]` | titles, descriptions, JSON-LD, internal links, theme memory, no flash, reduced motion |
+| `node tools/test-site.js [url]` | titles, descriptions, JSON-LD, internal links, Blackboard-only theme, photos load with alt text, reduced motion |
 | `tools/test-htaccess.sh [url]` | 301s for every old URL, 404 for private files, headers, HTTPS and www rules |
 | `php tools/test-notices.php` | Sanity pipeline end to end against a mock CDN (fetch, cache, render, stale fallback) |
 | `node tools/test-form.js` | enquiry form validation, both inboxes, honeypot (Web3Forms mocked; needs test keys) |
 | `tools/test-instagram.sh` | Instagram fetch and token refresh against a mock Graph API |
 | `node tools/test-reels.js video.webm` | reels play in view, pause out of view, unmute, pause control, filters |
-| `node tools/shots.js / /about/ ...` | screenshots in both themes at 375 and 1440 px (`reports/screens/`) |
+| `node tools/shots.js / /about/ ...` | screenshots at 375 and 1440 px (`reports/screens/`) |
 | `node tools/make-icons.js` | favicon PNGs and the chalk Open Graph image |
 | `tools/build-dist.sh` | the Hostinger zip |
 

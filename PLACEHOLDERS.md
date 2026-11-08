@@ -34,8 +34,7 @@ When the school sends an item, replace the placeholder in the file listed and ti
 
 | Item | Current state | File | Status |
 |---|---|---|---|
-| Transport (routes, contact) | Flagged in Why grid and FAQ; Facilities card hidden (`data-confirmed="false"`) | `partials/why.php`, `partials/faq.php`, `facilities/index.php` | Open |
-| "Transport" keyword in the home marquee | Shown because it is in the brief's keyword list. Remove it if there is no transport | `index.php` | Open |
+| Transport: routes, timings, fees | The school's bus photo shows buses exist, so a "School buses" facility card, the Why grid and the FAQ now say so. Routes, timings and fees stay as placeholders. **Please confirm the buses are Veer New Look's own** (they read "New Look Central School") | `facilities/index.php`, `partials/why.php`, `partials/faq.php` | Partly done |
 | Hostel / boarding | Hidden (`data-confirmed="false"`) | `facilities/index.php` | Open |
 | Swimming pool | Hidden (`data-confirmed="false"`) | `facilities/index.php` | Open |
 | Public-listing figures: about 1,340 students, 59 teachers, 46 classrooms, 8,130 m² campus | Hidden. Set `'stats_confirmed' => true` once confirmed in writing | `inc/config.php`, `index.php` | Open |
@@ -59,12 +58,14 @@ When the school sends an item, replace the placeholder in the file listed and ti
 
 | Placeholder | Where | How to fill | Status |
 |---|---|---|---|
-| Hero collage: school building, classroom, play area | Home | Real photos (no stock photos of children) via `tools/optimise-images.js`, then `taped_photo(..., picture(...))` | Open |
-| About strip, steps, facilities strip photos | Home | as above | Open |
-| One photo per facility (11) | Facilities | as above | Open |
-| Stage photos (Nursery, LKG, UKG, primary, middle, secondary) | Academics | as above | Open |
-| Leadership portraits | About | as above | Open |
-| Gallery strip (6) | Home | as above, or from the latest album | Open |
+| Hero collage | Home | Done: school building, Raksha Bandhan, sports ground | Done |
+| About strip, steps, facilities strip, gallery strip | Home | Done: library, school entrance, computer lab, 6 event and daily-life photos | Done |
+| Facility photos | Facilities | Done for library, computer labs, science labs, sports ground, school buses. **Still needed:** AV room, air-conditioned classroom, Maths lab, Fine Arts lab, activity room, play area (splash pool and sandpit) | Partly done |
+| Stage photos | Academics | Done for pre-primary, primary, middle, secondary, senior secondary. Class-specific photos for Nursery, LKG and UKG would go on the programme cards | Partly done |
+| Leadership portraits | About | Director and Principal photos | Open |
+| Staff photos | About | Done: two group photos of teachers at Business Junoon 2.0 | Done |
+| School photo albums | Gallery | Done: "Business Junoon 2.0" (12), "Raksha Bandhan" (3), "Around the school" (10), from `inc/photos.php` | Done |
+| Unused photo: architectural render of a two-storey glass building | Not used | Is this a planned building? Tell us where it belongs (it looks like a design render, so it is not shown as a real facility) | Open |
 | Event albums and YouTube links | Gallery | **Sanity: Photo albums** (staff) | Open |
 | Instagram reels | Home, Gallery | Sections are **commented out for now**. Re-enable in `index.php` and `gallery/index.php` once both accounts are Professional and tokens are in `config/secrets.php` | Hidden |
 
