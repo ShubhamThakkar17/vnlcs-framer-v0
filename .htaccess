@@ -53,6 +53,22 @@ AddType video/webm .webm
   RewriteRule ^activities\.html$            /gallery/                  [R=301,L]
   RewriteRule ^contactus\.html$             /admissions/#contact       [R=301,L,NE]
 
+  # Old disclosure documents were renamed in /docs/ (see REDIRECTS.md)
+  RewriteRule "^2026_pdf/AFFILIATION\sLETTER\.pdf$" /docs/affiliation-letter.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/APPENDIX\s-IX\.pdf$" /cbse-disclosure/ [R=301,L,NC]
+  RewriteRule "^2026_pdf/B\s+DOCUMENTS\sAND\sINFORMATION/2\.jpeg$" /docs/trust-registration.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/B\s+DOCUMENTS\sAND\sINFORMATION/3\.pdf$" /docs/noc.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/B\s+DOCUMENTS\sAND\sINFORMATION/5\.pdf$" /docs/building-safety.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/B\s+DOCUMENTS\sAND\sINFORMATION/6\.pdf$" /docs/fire-safety.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/B\s+DOCUMENTS\sAND\sINFORMATION/7\.pdf$" /docs/deo-certificate.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/B\s+DOCUMENTS\sAND\sINFORMATION/8\.pdf$" /docs/water-health-sanitation.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/BOARD\sRESULT\.pdf$" /docs/board-results.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/calendar_25_26\.pdf$" /docs/academic-calendar-2025-26.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/fees\sstructure_25_26\.pdf$" /docs/fee-structure-2025-26.pdf [R=301,L,NC]
+  RewriteRule "^2026_pdf/managing\scommittee_25_26\.pdf$" /docs/smc-list.pdf [R=301,L,NC]
+  RewriteRule "^2021-pdf/BUC\sCERTIFICATE\.pdf$" /docs/building-safety.pdf [R=301,L,NC]
+  RewriteRule "^2021-pdf/PTA\sMEMBERS\.pdf$" /docs/pta-list.pdf [R=301,L,NC]
+  RewriteRule "^2021-pdf/RECOGNISED\sCERTIFICATE\.pdf$" /docs/rte-recognition.pdf [R=301,L,NC]
   # Old PDF folders keep working: /2026_pdf/x.pdf and /2021-pdf/x.pdf -> /docs/x.pdf
   RewriteRule ^(?:2026_pdf|2021-pdf)/(.+)$  /docs/$1                   [R=301,L,NC]
 

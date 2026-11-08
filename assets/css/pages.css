@@ -232,6 +232,7 @@
 /* Two-column split */
 .split { display: grid; gap: clamp(2rem, 1.5rem + 3vw, 4rem); align-items: center; }
 .split--top { align-items: start; }
+.split > * { min-width: 0; }   /* wide tables scroll inside their .table-wrap instead of widening the page */
 @media (min-width: 900px) {
   .split { grid-template-columns: 1fr 1fr; }
   .split--flip > :first-child { order: 2; }
@@ -313,9 +314,28 @@
 .moment h4 { font-size: 1.2rem; margin: 0 0 .25rem; color: var(--accent-1); }
 .moment p { color: var(--ink-muted); font-size: 1.05rem; }
 .streams { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); padding: 0; margin: 0; list-style: none; }
+/* Academics: curriculum notes, exam plan, key dates */
+.curriculum__sub { margin: 1.5rem 0 .5rem; color: var(--accent-1); }
+.checklist { display: grid; gap: .6rem; margin: 0 0 1.25rem; }
+.checklist li { position: relative; padding-left: 1.6rem; }
+.checklist li::before { content: ""; position: absolute; left: .1rem; top: .55em; width: .7rem; height: .7rem; border: 2px solid var(--accent-4); border-radius: 45% 55% 50% 50%; }
+.checklist--paper li::before { border-color: var(--paper-accent); }
+.exam-plan { margin: .75rem 0 1rem; }
+.exam-plan tbody th { color: var(--accent-1); }
+@media (max-width: 599px) {
+  .exam-plan thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .exam-plan tr, .exam-plan th, .exam-plan td { display: block; }
+  .exam-plan tr { padding: .6rem 0; border-bottom: 1px solid var(--line); }
+  .exam-plan th, .exam-plan td { border: 0; padding: .2rem 0; }
+  .exam-plan td::before { content: attr(data-label) ": "; font-weight: 800; color: var(--ink-muted); }
+}
+.key-dates { display: grid; gap: .5rem; margin: .25rem 0 1rem; }
+.key-dates time { font-family: var(--font-data); font-weight: 800; color: var(--accent-1); }
 .calendar-note { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.5rem; border: 2px dashed var(--line); border-radius: var(--wobble); max-width: 760px; }
+.calendar-note > div { min-width: 0; overflow-wrap: anywhere; }
 .calendar-note__icon { width: 48px; height: 48px; color: var(--accent-4); flex: none; }
 .calendar-note .btn { margin-top: .75rem; }
+.calendar-note .doc-link { white-space: normal; align-items: flex-start; }
 
 /* Facilities */
 .facility-grid { display: grid; gap: 3rem var(--gap); grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); padding: 0; margin: 0; list-style: none; }

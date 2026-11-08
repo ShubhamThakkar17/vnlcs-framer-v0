@@ -124,7 +124,7 @@ foreach (board_notices() as $n) {
         <li class="card stage">
           <?= doodle('star', 'card__icon') ?>
           <h3>Senior Secondary</h3>
-          <p>Classes 11 and 12. Science (PCM, PCB) and Commerce. <span class="placeholder">[STREAMS TO CONFIRM]</span></p>
+          <p>Classes 11 and 12. Science (PCM, PCB) and Commerce.</p>
           <a class="card__meta" href="/academics/#senior-secondary">Classes 11–12 <span class="visually-hidden">: senior secondary details</span>→</a>
         </li>
       </ul>

@@ -48,7 +48,8 @@ $sent = isset($_GET['sent']);
               <tr><td>LKG</td><td>[TO CONFIRM]</td></tr>
               <tr><td>UKG</td><td>[TO CONFIRM]</td></tr>
               <tr><td>Class 1</td><td>[TO CONFIRM]</td></tr>
-              <tr><td>Class 2 to Class 12</td><td>[CRITERIA, e.g. previous class passed]</td></tr>
+              <tr><td>Class 2 to Class 10</td><td>Transfer Certificate from the last school, and an admission test (English, Hindi, Maths and Science)</td></tr>
+              <tr><td>Class 11</td><td>Based on the Class 10 board result and an interview</td></tr>
             </tbody>
           </table>
         </div>
@@ -58,7 +59,14 @@ $sent = isset($_GET['sent']);
         <h2><span class="line">What to</span> <span class="line"><span class="hl">bring</span></span></h2>
         <div class="note-wrap"><div class="note paper">
           <p class="note__cat">Documents list</p>
-          <p><span class="placeholder">[LIST OF DOCUMENTS REQUIRED AT ADMISSION, from the school office]</span></p>
+          <ul class="checklist checklist--paper" role="list">
+            <li>Birth certificate</li>
+            <li>Original Transfer Certificate from the last school</li>
+            <li>Original Migration Certificate, where needed</li>
+            <li>Mark sheet of the last class</li>
+            <li>Two photographs</li>
+          </ul>
+          <p class="small">From the school's admission form. <span class="placeholder">[TO CONFIRM FOR 2027-28]</span></p>
         </div></div>
       </div>
     </div>

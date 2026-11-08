@@ -30,7 +30,22 @@ Check the live rules with `tools/test-htaccess.sh https://veernewlookschool.com`
 | `/importantlinks21.html` | `/notices/#official-links` |
 | `/activities.html` | `/gallery/` |
 | `/contactus.html` | `/admissions/#contact` |
-| `/2026_pdf/<file>` | `/docs/<file>` |
+| `/2026_pdf/AFFILIATION LETTER.pdf` | `/docs/affiliation-letter.pdf` |
+| `/2026_pdf/APPENDIX -IX.pdf` | `/cbse-disclosure/` |
+| `/2026_pdf/B  DOCUMENTS AND INFORMATION/2.jpeg` | `/docs/trust-registration.pdf` |
+| `/2026_pdf/B  DOCUMENTS AND INFORMATION/3.pdf` | `/docs/noc.pdf` |
+| `/2026_pdf/B  DOCUMENTS AND INFORMATION/5.pdf` | `/docs/building-safety.pdf` |
+| `/2026_pdf/B  DOCUMENTS AND INFORMATION/6.pdf` | `/docs/fire-safety.pdf` |
+| `/2026_pdf/B  DOCUMENTS AND INFORMATION/7.pdf` | `/docs/deo-certificate.pdf` |
+| `/2026_pdf/B  DOCUMENTS AND INFORMATION/8.pdf` | `/docs/water-health-sanitation.pdf` |
+| `/2026_pdf/BOARD RESULT.pdf` | `/docs/board-results.pdf` |
+| `/2026_pdf/calendar_25_26.pdf` | `/docs/academic-calendar-2025-26.pdf` |
+| `/2026_pdf/fees structure_25_26.pdf` | `/docs/fee-structure-2025-26.pdf` |
+| `/2026_pdf/managing committee_25_26.pdf` | `/docs/smc-list.pdf` |
+| `/2021-pdf/BUC CERTIFICATE.pdf` | `/docs/building-safety.pdf` |
+| `/2021-pdf/PTA MEMBERS.pdf` | `/docs/pta-list.pdf` |
+| `/2021-pdf/RECOGNISED CERTIFICATE.pdf` | `/docs/rte-recognition.pdf` |
+| `/2026_pdf/<file>` (any other) | `/docs/<file>` |
 | `/2021-pdf/<file>` | `/docs/<file>` |
 
 ## Old PDF links
@@ -40,8 +55,12 @@ Old PDFs were linked from folders like `/2026_pdf/...` and `/2021-pdf/...`. Copy
 The CBSE Disclosure page expects these names in `/docs/` (rename copies if needed):
 
 `affiliation-letter.pdf`, `trust-registration.pdf`, `noc.pdf`, `rte-recognition.pdf`, `building-safety.pdf`,
-`fire-safety.pdf`, `deo-certificate.pdf`, `water-health-sanitation.pdf`, `fee-structure.pdf`,
-`academic-calendar.pdf`, `smc-list.pdf`, `pta-list.pdf`, `board-results.pdf`.
+`fire-safety.pdf`, `deo-certificate.pdf`, `water-health-sanitation.pdf`, `fee-structure-<session>.pdf`,
+`academic-calendar-<session>.pdf`, `smc-list.pdf`, `pta-list.pdf`, `board-results.pdf`.
+
+The documents the old site published for 2025-26 are already in `/docs/` under these names (Nov 2026),
+and each old file name redirects to its new name (table above). `academic-calendar.pdf` (no session) is the
+current year's calendar shown on the Academics page; upload it when the 2026-27 calendar is ready.
 
 ## Notes
 

@@ -121,7 +121,7 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
       <div class="section-head">
         <p class="eyebrow">Classes 11 and 12</p>
         <h2 id="senior-secondary"><span class="line">Senior</span> <span class="line">Secondary</span></h2>
-        <p>Students choose a stream for the CBSE Class 12 board examinations. <span class="placeholder">[STREAMS AND SUBJECT COMBINATIONS FOR THE NEXT SESSION TO CONFIRM]</span></p>
+        <p>Students choose a stream for the CBSE Class 12 board examinations. <span class="placeholder">[SUBJECT COMBINATIONS FOR 2027-28 TO CONFIRM]</span></p>
       </div>
       <?= taped_photo('', 'Senior students at break', photo('life/senior-students', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
       </div>
@@ -134,19 +134,37 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
   </section>
 
   <section class="section-tight" aria-labelledby="curriculum" id="curriculum-section">
-    <div class="container split">
+    <div class="container split split--top">
       <div>
         <p class="eyebrow">Curriculum</p>
         <h2 id="curriculum"><span class="line">The CBSE</span> <span class="line">curriculum</span></h2>
-        <p class="lead">Veer New Look follows the curriculum set by the Central Board of Secondary Education.</p>
-        <p><span class="placeholder">[TEXTBOOKS AND SYLLABUS NOTES FROM THE SCHOOL]</span></p>
-        <p>The latest CBSE curriculum documents are published on the <a href="https://cbseacademic.nic.in/" rel="noopener">CBSE Academic website</a>.</p>
+        <p class="lead">Veer New Look follows the curriculum set by the Central Board of Secondary Education, from Nursery to Class 12.</p>
+        <p>CBSE publishes the syllabus for every subject afresh each session. Our classes follow the current one.</p>
+        <h3 class="curriculum__sub">New this year (2026-27)</h3>
+        <ul class="checklist" role="list">
+          <li>Class 9 moves to CBSE's new scheme of studies, based on the National Curriculum Framework for School Education (NCF-SE 2023). <a href="/notices/cbse-acad-70-2026-scheme-class-9">Read the CBSE circular</a>.</li>
+          <li>Class 9 students study three languages, at least two of them Indian languages.</li>
+          <li>Class 10 continues with the previous scheme this year.</li>
+          <li>In most board subjects, the theory paper carries 80 marks and internal assessment 20. Class 12 subjects with practicals, such as Physics, Chemistry, Biology and Computer Science, carry 70 and 30. <a href="/notices/cbse-marks-bifurcation-2026-27">See the subject-wise marks</a>.</li>
+        </ul>
+        <p><span class="placeholder">[BOOK LIST FOR 2026-27 FROM THE SCHOOL]</span></p>
+        <p>The full CBSE curriculum documents are published on the <a href="https://cbseacademic.nic.in/" rel="noopener">CBSE Academic website</a>.</p>
       </div>
       <div id="assessment-section">
         <p class="eyebrow">Assessment</p>
         <h2 id="assessment"><span class="line">Tests and</span> <span class="line">exams</span></h2>
-        <p><span class="placeholder">[ASSESSMENT PATTERN: unit tests, half-yearly and annual exams, as followed by the school]</span></p>
-        <p>Exam timetables and results are posted on the <a href="/notices/">Notice Board</a>.</p>
+        <p>Children are assessed through the year, not just at the end. This is how the school's 2025-26 calendar spread the tests.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Tests and exams by stage (table)"><table class="data-table exam-plan">
+          <caption class="visually-hidden">Tests and exams by stage</caption>
+          <thead><tr><th scope="col">Classes</th><th scope="col">Through the year</th><th scope="col">End of the year</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Nursery to UKG</th><td data-label="Through the year">First assessment (October)</td><td data-label="End of the year">Annual exams and second assessment (late February to March)</td></tr>
+            <tr><th scope="row">1 to 8</th><td data-label="Through the year">Periodic Test 1 (August), half-yearly exams (October), Periodic Test 2 (January)</td><td data-label="End of the year">Annual exams (late February to mid-March)</td></tr>
+            <tr><th scope="row">9 and 11</th><td data-label="Through the year">Periodic Test 1 (August), half-yearly exams (October), Periodic Test 2 (January)</td><td data-label="End of the year">Annual exams (from mid-February)</td></tr>
+            <tr><th scope="row">10 and 12</th><td data-label="Through the year">Periodic Test 1 (August), half-yearly exams (October), two pre-board exams (December and January)</td><td data-label="End of the year">CBSE board exams (from 16 February 2027)</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small muted">Exact dates for 2026-27, exam timetables and results are posted on the <a href="/notices/">Notice Board</a>.</p>
       </div>
     </div>
   </section>
@@ -157,11 +175,18 @@ $calendar = is_file(ROOT . '/docs/academic-calendar.pdf') ? '/docs/academic-cale
         <?= icon('calendar', 'calendar-note__icon') ?>
         <div>
           <h2 id="calendar" class="h3-like">Academic calendar</h2>
+          <p>Key CBSE dates for 2026-27:</p>
+          <ul class="key-dates" role="list">
+            <li><time datetime="2027-01-01">From 1 January 2027</time>: practical exams, project work and internal assessment for Classes 10 and 12. <a href="/notices/cbse-practicals-winter-bound-2026-27">CBSE circular</a></li>
+            <li><time datetime="2027-02-16">16 February 2027</time>: CBSE board exams begin. Class 10 ends on 9 March, Class 12 on 9 April. <a href="/notices/cbse-date-sheet-2027-class-10-12">Date sheet</a></li>
+          </ul>
 <?php if ($calendar): ?>
-          <p>Term dates, holidays and exam weeks for the year.</p>
-          <a class="btn btn--primary btn--small" href="<?= e($calendar) ?>"><?= icon('file') ?>Download the calendar (PDF)</a>
+          <a class="btn btn--primary btn--small" href="<?= e($calendar) ?>"><?= icon('file') ?>Download the 2026-27 school calendar (PDF)</a>
 <?php else: ?>
-          <p><span class="placeholder">[ACADEMIC CALENDAR PDF: upload as /docs/academic-calendar.pdf]</span></p>
+          <p><span class="placeholder">[2026-27 SCHOOL CALENDAR PDF: upload as /docs/academic-calendar.pdf]</span></p>
+<?php if (is_file(ROOT . '/docs/academic-calendar-2025-26.pdf')): ?>
+          <p class="small"><a class="doc-link" href="/docs/academic-calendar-2025-26.pdf"><?= icon('file') ?>Last year's school calendar (2025-26, PDF)</a></p>
+<?php endif; ?>
 <?php endif; ?>
         </div>
       </div>

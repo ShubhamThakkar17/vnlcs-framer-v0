@@ -21,7 +21,7 @@ require ROOT . '/partials/head.php';
         <p class="eyebrow">Who runs the school</p>
         <h2 id="trust-title"><span class="line">Our trust</span> <span class="line">and <span class="hl">group</span></span></h2>
         <p class="lead">Veer New Look is run by the <?= e(cfg('trust')) ?> and is part of the <a href="<?= e(cfg('group.url')) ?>" rel="noopener"><?= e(cfg('group.name')) ?></a>.</p>
-        <p><span class="placeholder">[A FEW LINES ABOUT THE TRUST: when it was set up and what it stands for]</span></p>
+        <p>The trust is registered as a public trust in Panchmahal district, and its registration is valid for life. <span class="placeholder">[A FEW LINES ABOUT THE TRUST: when it was set up and what it stands for]</span></p>
       </div>
       <div class="facts">
         <div class="facts__row"><span class="facts__big">2005</span><span class="facts__label">Founded in Halol</span></div>
@@ -51,7 +51,11 @@ require ROOT . '/partials/head.php';
         <p class="eyebrow">Director's Desk</p>
         <h2 id="director-title"><span class="line">A message from</span> <span class="line">our <span class="hl">Director</span></span></h2>
         <blockquote class="message__quote">
-          <p><span class="placeholder">[DIRECTOR'S MESSAGE]</span></p>
+          <p>Dear Parents,</p>
+          <p>"Discipline is the bridge between goals and accomplishments."</p>
+          <p>As the Director of our school, I assure you that every child here grows up with a sense of care and concern for society and the environment. Our school encourages a wide range of activities, including service to the community through creativity, action and service programmes.</p>
+          <p>May every child blossom into a bright star who brings honour to their home, school, community and country.</p>
+          <p>On behalf of the management, staff and students, I extend a warm welcome to you and your child.</p>
         </blockquote>
         <p class="message__sign">[DIRECTOR'S NAME], Director</p>
       </div>
@@ -65,7 +69,11 @@ require ROOT . '/partials/head.php';
         <p class="eyebrow">Principal's Desk</p>
         <h2 id="principal-title"><span class="line">A message from</span> <span class="line">our <span class="hl">Principal</span></span></h2>
         <blockquote class="message__quote">
-          <p><span class="placeholder">[PRINCIPAL'S MESSAGE]</span></p>
+          <p>Dear Parents,</p>
+          <p>Schools have shaped the lives of people for centuries. Where school ends, real life begins. In school we are taught a lesson and then given a test. In life we are given a test that teaches us a lesson.</p>
+          <p>We work to deepen our students' understanding of the world around them. Children are encouraged to aim high and are guided to do their best in everything. Activities in and out of the classroom make learning enjoyable, bringing together good teaching practice and India's rich heritage.</p>
+          <p>A well-rounded education matters for every child. The school encourages students to take part in sports and games, cultural events, performances, educational trips, fairs and festival celebrations.</p>
+          <p>We welcome you to join our family and explore a new way of learning.</p>
         </blockquote>
         <p class="message__sign">[PRINCIPAL'S NAME], Principal</p>
       </div>
@@ -76,8 +84,8 @@ require ROOT . '/partials/head.php';
     <div class="container">
       <?= section_heading('What guides us', ['Vision and', '<span class="hl">mission</span>'], 'vision-title', 'section-head--center') ?>
       <div class="two-notes">
-        <div class="note-wrap"><article class="note paper"><p class="note__cat">Our vision</p><p><span class="placeholder">[VISION STATEMENT]</span></p></article></div>
-        <div class="note-wrap"><article class="note paper"><p class="note__cat">Our mission</p><p><span class="placeholder">[MISSION STATEMENT]</span></p></article></div>
+        <div class="note-wrap"><article class="note paper"><p class="note__cat">Our vision</p><p>To be a value-driven learning organisation with excellence as its standard, where tradition and technology come together with the best available research to keep learning and growth going. To create an environment in which teachers grow as individuals and as educators. To encourage learning by enquiry, exploration and experience, at the cutting edge of educational technology.</p></article></div>
+        <div class="note-wrap"><article class="note paper"><p class="note__cat">Our mission</p><p>Rooted in tradition, ready for the future. To nurture students who are confident with today's technologies, and to build an institution of excellence where knowledge and learning grow together, all the time.</p></article></div>
       </div>
     </div>
   </section>
@@ -88,9 +96,9 @@ require ROOT . '/partials/head.php';
       <div class="split split--top">
       <ol class="timeline" role="list">
         <li><span class="timeline__year">2005</span><p>Veer New Look Central School opens on Godhra Road, Halol.</p></li>
-        <li><span class="timeline__year">[YEAR]</span><p><span class="placeholder">[MILESTONE, e.g. CBSE affiliation or a new building]</span></p></li>
-        <li><span class="timeline__year">[YEAR]</span><p><span class="placeholder">[MILESTONE]</span></p></li>
-        <li><span class="timeline__year">Today</span><p>Classes from Nursery to Class 12, with Science and Commerce in the senior years. <span class="placeholder">[TO CONFIRM]</span></p></li>
+        <li><span class="timeline__year">2013</span><p>The Gujarat Education Department extends the school's No Objection Certificate for CBSE affiliation.</p></li>
+        <li><span class="timeline__year">2022</span><p>CBSE extends the school's affiliation up to Senior Secondary level (Class 12), from 1 April 2022 to 31 March 2027.</p></li>
+        <li><span class="timeline__year">Today</span><p>Classes from Nursery to Class 12, with Science and Commerce in Classes 11 and 12.</p></li>
       </ol>
       <?= taped_photo('', 'Our school building', photo('campus/building', ['sizes' => '(min-width: 900px) 520px, 90vw'])) ?>
       </div>
